@@ -1,0 +1,12 @@
+# Credenciales — nunca versionar
+includes/config/config.php
+
+# Medios subidos por usuarios
+uploads/media/*
+uploads/solicitudes/*
+!uploads/media/.gitkeep
+!uploads/solicitudes/.gitkeep
+
+# Sistema
+.DS_Store
+*.log

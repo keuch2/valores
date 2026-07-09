@@ -1,0 +1,26 @@
+# ============================================================================
+#  /uploads — medios subidos. NUNCA ejecutar código aquí.
+#  (No usar php_admin_flag: no es válida bajo PHP-FPM/handler y rompe la carpeta.)
+# ============================================================================
+
+# Quitar cualquier handler/tipo que ejecute código del lado servidor.
+RemoveHandler .php .phtml .php3 .php4 .php5 .php7 .phps .pl .py .cgi .asp .sh
+RemoveType .php .phtml .php3 .php4 .php5 .php7 .phps
+
+# Forzar que todo se sirva como texto plano (inerte), aunque se cuele un script.
+<IfModule mod_mime.c>
+    AddType text/plain .php .phtml .php3 .php4 .php5 .php7 .phps .pl .py .cgi .asp .sh
+</IfModule>
+
+# Bloquear por completo el acceso a archivos potencialmente ejecutables.
+<FilesMatch "\.(php|phtml|php[0-9]|phps|pl|py|cgi|asp|sh|htaccess)$">
+    <IfModule mod_authz_core.c>
+        Require all denied
+    </IfModule>
+    <IfModule !mod_authz_core.c>
+        Order allow,deny
+        Deny from all
+    </IfModule>
+</FilesMatch>
+
+Options -Indexes -ExecCGI

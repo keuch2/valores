@@ -1,0 +1,229 @@
+                           FORMULARIO DE REGISTRO DE CLIENTE PERSONA FISICA
+
+
+Fecha    /    /                                                                              Primera vez           Actualización de datos
+
+N° Cliente Interno
+
+N° Comitente SEN
+
+
+
+1- DATOS PERSONALES
+
+  Nombres y Apellidos:
+
+  Fecha de Nacimiento:        /    /    Sexo: M    F
+
+  N° Documento:                                                      RUC:                                    Nacionalidad:
+
+  Domicilio Particular: Calle I:                        N° de domicilio:              Calle II:
+
+  Edificio:                              Ciudad:                                      Barrio:
+
+  Departamento:                                        País de residencia:                        Línea baja:
+
+  Celular:                                              Correo electrónico:
+  Estado Civil: Soltero       Casado       Separación de bienes: Si     No         Viudo          Divorciado
+  Nombres y Apellidos del cónyuge:
+  N° Documento del cónyuge:
+
+   (*) Para uso de Firma de Cuentas Conjuntas/Indistintas, favor completar Anexo KYC 2.
+
+
+
+2- DATOS LABORALES
+
+
+  Asalariado              Unipersonal       Independiente         Jubilado                Ama de Casa             Otros
+
+  Nombre de la empresa:                             Actividad Económica:                                        Cargo:
+
+  Domicilio Laboral: Calle I:                                     N°:         Calle II:
+
+  Edificio:                              Ciudad:                                      Barrio:
+
+  Departamento:                                        Línea baja:                                Celular:
+
+  Antigüedad:                                           Correo electrónico:
+3- INGRESOS Y EGRESOS MENSUALES
+Ingreso/Egreso Mensual: Gs.           Usd.
+
+
+                          Ingresos mensuales                                                   Egresos mensuales
+  Salario                                                              Gastos Familiares
+  Honorarios Profesionales                                             Cuotas de préstamos
+  Alquileres cobrados                                                  Alquileres
+  Ventas                                                               Otros gastos
+  Dividendos, Acciones, Inversiones
+  Otros Ingresos
+  Ingresos del Cónyuge
+  Total Ingresos                                                       Total Egresos
+
+4- SITUACIÓN PATRIMONIAL
+Ingreso/Egreso Mensual: Gs.           Usd.
+
+
+                                 Activo                                                             Pasivo
+  Efectivo                                                             Deudas Bancarias
+  Bancos                                                               Deudas Comerciales
+  Vehículos                                                            Otras Deudas
+  Inmuebles
+                                                                       Total Pasivo
+  Otros activos
+
+  Total Activos                                                        Total Patrimonio Neto
+
+
+Volumen de Movimiento Esperado Anualmente
+
+Inferior a USD 10.000        Entre USD 10.000 y USD 100.000      Entre USD 100.000 y USD 500.000        Superior a USD 500.000
+
+
+
+5- REFERENCIA PERSONALES
+
+  Nombres y Apellidos:
+
+  Teléfono:                                                   Relacionamiento:
+
+  Nombres y Apellidos:
+
+  Teléfono:                                                   Relacionamiento:
+6- OPERACIONES
+
+
+ Origen de los fondos que operaré a través de vuestra entidad es de fruto de:
+
+ Ahorro         Venta de Propiedad          Inversiones      Dividendos         Jubilación           Salario   Otros
+
+
+ Propósito de la relación a establecerse con Valores Casa de Bolsa S.A.:
+
+
+
+
+ Se encuentra vinculado en la Casa de Bolsa: SI     NO
+
+ Motivo de dicha vinculación:
+
+
+
+
+7- INSTRUCCIÓN DE PAGO Y AUTORIZACIÓN DE OPERATIVO DE PAGO
+
+
+ Por medio de la presente solicitamos y autorizamos suficientemente a utilizar los siguientes procedimientos operativos para
+ los   pagos de cupones y principales Títulos Valores de nuestra propiedad y otros pagos que correspondan, en carácter
+ permanente. Asumimos la responsabilidad por los costos riesgos resultantes, o inherentes a, los procedimientos seleccionados.
+
+ Sírvase transferir o depositar en la cuenta mencionada:
+
+  Cuenta Bancaria en Guaraníes – Titular:
+  Cuenta Corriente Caja de Ahorro         N° de Cuenta:                             Entidad:
+
+  Cuenta Bancaria en Dólares – Titular:
+  Cuenta Corriente Caja de Ahorro         N° de Cuenta:                             Entidad:
+ Autorizo suficientemente a deducir de los importes depositados los costos cobrados por la institución financiera más arriba
+ seleccionada, en caso que corresponda.
+
+        Autorizamos suficientemente la(s) siguiente (s) persona(s) a comparecer a vuestra oficina en nuestro remplazo para
+
+        el retiro de documentos:
+
+                                                                                               CI:
+
+                                                                                               CI:
+     8- INFORMACION ADICIONALES
+
+     TIPO DE ORDEN QUE LA CASA DE BOLSA RECIBIRÁ DEL CLIENTE
+
+          Escrita    Vía e-mail (únicamente del correo declarado en este formulario)
+
+A)    PEP: ¿Es Ud. una persona que ocupe o haya ocupado cargos públicos relevantes, políticos o militares de alto rango en este
+      o en otro país? “según lo establecido en la Res. SEPRELAD Nº 50/19”
+
+            SI             NO             Detalle el país, cargo o institución y periodo
+
+            ¿Tiene algún tipo de relación (segundo grado de consanguinidad y segundo de afinidad, cónyuge o conviviente) con
+            actuales o ex Líderes del gobierno, funcionario que ocupa o haya ocupado cargos públicos relevantes, políticos o militares
+            de alto rango en este o en otro país? “según lo establecido en la Res. SEPRELAD Nº 50/19”
+
+            SI             NO             Detalle el país, cargo o institución y periodo
+
+B)    LEY FATCA: ¿Se encuentra usted sujeto bajo la LEY FATCA de cumplimiento fiscal de cuentas en el extranjero contra la
+      evasión fiscal, creada con el objeto de identificar cuentas bancarias y de inversiones realizadas por los contribuyentes de EUA
+      fuera del país?
+
+             SI            NO
+
+             ¿Es ciudadano y/o residente de los Estados Unidos de América?                                 SI       NO
+
+             ¿Es residente fiscal de los Estados Unidos de América (Green Card o permanencia en EUA)?      SI       NO
+
+             ¿Autoriza a VALORES CASA DE BOLSA a enviar información a EUA en cumplimiento con LEY          SI       NO
+             FATCA?
+
+            En virtud de la LEY FATCA, que faculta al gobierno de los Estados Unidos de América a solicitar el reporte de
+            datos de operaciones sobre cuentas de ciudadanos norteamericanos y/o residentes en países extranjeros y/o
+            cualquier otra persona que se encuentre comprendida dentro la mencionada Ley, por el presente instrumento,
+            autorizo, expresa e irrevocablemente a VALORES CASA DE BOLSA S.A. a brindar información sobre mi persona,
+            movimiento bancario, inversiones y todo movimiento financiero registrado con relación a la entidad, en caso de
+            constatarse que me encuentro sujeto bajo la mencionada ley. Asimismo, renuncio expresa e irrevocablemente a
+            reclamar o accionar contra Valores y deslindo totalmente de cualquier responsabilidad a VALORES CASA DE
+            BOLSA S.A. derivada del cumplimiento de la referida disposición.
+
+      Acceso a la Información
+
+            Por la presente solcito y autorizo a VALORES CASA DE BOLSA S.A para que la misma pueda consultar a
+            INFORMCONF y CRITERION haciendo extensiva a los mismos esta autorización para que puedan recabar,
+            procesar y proveer toda la información nacional/ internacional relacionada a mis datos personales
+            (Familiares/Domicilio/Teléfono) antecedentes civiles, penales periodísticos, comerciales y financiero, a fin de que
+            estos datos sean utilizados para verificar la viabilidad de mi solicitud para apertura de cuenta y realización de
+            operaciones con la entidad.
+
+            Autorizo la consulta y búsqueda en las listas de sanciones nacionales e internacionales.
+            Declaro que los datos proveídos más arriba son verdaderos y la información es exacta y real. Asimismo,
+            reconozco y acepto ser responsable de todos los datos proveídos en este formulario, así como también todos los
+            documentos proporcionados por mí, comprometiéndome a informar sobre cualquier alteración en los datos e
+            información suministrada, haciéndome responsable por cualquier hecho directo o indirecto por incumplimiento y
+            deslindando de toda responsabilidad a VALORES CASA DE BOLSA S.A.
+9- CROQUIS
+
+
+
+
+10- SUSCRIBO BAJO EL PIE Y DECLARO BAJO FE DE JURAMENTO QUE:
+
+   Reconozco y acepto ser responsable de todos los datos proveídos en este formulario, así como también de todos los
+   documentos proporcionados por mí para los operaciones que tenga con Valores Casa de Bolsa S.A. Declaro que los
+   mismos son válidos, verdaderos y fiel reflejo de mi situación patrimonial y me obligo fehacientemente a informar
+   inmediatamente por escrito o por los medios de comunicación proveídos por Valores Casa de Bolsa S.A. cualquier
+   alteración de los mismos, haciéndome responsable por cualquier hecho directo o indirecto por su incumplimiento y
+   deslindo de toda responsabilidad Valores Casa de Bolsa S.A.
+
+   Declaración Jurada de Fondos sobre Licitud y origen de fondos: En cumplimiento de lo dispuesto por la Secretaria de
+   Prevención de Lavado de Dinero o Bienes (Seprelad), por la presente DECLARO/AMOS BAJO JURAMENTO, que los
+   fondos y valores que corresponden a las operaciones que se realizan en la Bolsa de Valores de Asunción S.A (BVA S.A)
+   son provenientes de ACTIVIDADES LICITAS. También de carácter de DECLARACIÓN JURADA, manifestamos que las
+   informaciones dichas en el presente son exactas y verdaderas y que tengo conocimiento de la Ley y el código penal
+   vigente, comprometiéndonos a ratificarnos de la presente declaración ante cualquier autoridad administrativa, fiscal o
+   judicial, eximiendo de esta forma a VALORES CASA DE BOLSA S.A. de cualquier inconveniente que la misma pudiera
+   generarle en el futuro.
+
+
+
+
+                         Firma del Titular                                  Firma del Cónyuge
+                         Aclaración:                                        Aclaración:
+                         N° de Documento:                                   N° de Documento:
+
+
+
+USO INTERNO
+
+
+
+
+                Asesor Bursátil                                                 Oficial de Cumplimiento
+

@@ -1,0 +1,38 @@
+# ============================================================================
+#  Valores CMS — .htaccess raíz
+#  Front-controller + friendly URLs + cabeceras de seguridad
+#  Base de la app: /valores-app/  (servida desde localhost/valores-app/)
+# ============================================================================
+
+# --- Cabeceras de seguridad ---
+<IfModule mod_headers.c>
+    Header always set X-Frame-Options "SAMEORIGIN"
+    Header always set X-Content-Type-Options "nosniff"
+    Header always set Referrer-Policy "strict-origin-when-cross-origin"
+    # CSP básica (ajustar cuando se conozcan todos los orígenes de assets/CDN)
+    Header always set Content-Security-Policy "default-src 'self'; img-src 'self' data: https:; style-src 'self' 'unsafe-inline' https:; script-src 'self' 'unsafe-inline' https:; font-src 'self' https: data:; frame-ancestors 'self';"
+</IfModule>
+
+# --- Bloquear acceso directo a carpetas internas (defensa en profundidad) ---
+# (cada carpeta además trae su propio .htaccess "Deny from all")
+RedirectMatch 403 ^/valores-app/(includes|database|config)(/.*)?$
+
+# --- No listar directorios ---
+Options -Indexes
+
+# --- Front-controller / friendly URLs ---
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteBase /valores-app/
+
+    # No reescribir el panel admin (tiene su propio router)
+    RewriteRule ^admin(/.*)?$ - [L]
+
+    # Servir archivos y directorios existentes tal cual (assets, etc.)
+    RewriteCond %{REQUEST_FILENAME} -f [OR]
+    RewriteCond %{REQUEST_FILENAME} -d
+    RewriteRule ^ - [L]
+
+    # Todo lo demás al front-controller público
+    RewriteRule ^ index.php [L]
+</IfModule>
