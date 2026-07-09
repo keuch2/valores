@@ -112,7 +112,7 @@ function auth_exigir(): void
 {
     if (!auth_check()) {
         flash('error', 'Iniciá sesión para continuar.');
-        redirigir('admin/login');
+        redirigir('admin/?r=auth/login');
     }
 }
 
