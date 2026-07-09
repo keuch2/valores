@@ -1,5 +1,6 @@
 # Credenciales — nunca versionar
 includes/config/config.php
+.deploy-secrets.env
 
 # Medios subidos por usuarios
 uploads/media/*
