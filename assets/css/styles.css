@@ -1765,3 +1765,19 @@ ul { list-style: none; }
 .ap-tipo-btn:hover{border-color:var(--color-celeste)}
 .ap-tipo-btn.sel{border-color:var(--color-celeste);background:var(--color-celeste-soft)}
 .ap-repeater-row{position:relative}
+
+/* ============ Contenido de detalle de servicio (CMS) ============ */
+.prose{color:var(--color-gray-text);line-height:1.7}
+.prose h2{font-family:var(--font-secondary,serif);color:var(--color-blue-inst);font-size:1.75rem;font-weight:700;margin:0 0 1rem}
+.prose h3{color:var(--color-blue-inst);font-size:1.25rem;font-weight:700;margin:2rem 0 1rem}
+.prose p{margin:0 0 1rem}
+.prose strong{color:var(--color-blue-inst)}
+.prose ul{margin:0 0 1rem 1.25rem;list-style:disc}
+.prose a{color:var(--color-celeste);text-decoration:underline}
+
+/* Grilla de features dentro del contenido */
+.srv-features{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1rem;margin:1.5rem 0}
+.srv-feature{background:#fff;border:1px solid var(--color-gray-ui);border-radius:var(--radius-card,12px);
+  padding:1.25rem;box-shadow:var(--shadow-card,0 2px 16px rgba(11,60,93,.07))}
+.srv-feature h4{color:var(--color-blue-inst);font-weight:700;font-size:1rem;margin:0 0 .4rem}
+.srv-feature p{color:var(--color-gray-text);font-size:.875rem;line-height:1.55;margin:0}

@@ -57,6 +57,11 @@ final class Media
         if (!empty($m['video_url'])) {
             return $m['video_url'];
         }
+        // Imágenes preexistentes del tema (assets/img/…) se sirven en su ubicación;
+        // el resto vive bajo uploads/media/.
+        if (strncmp($m['ruta'], 'assets/', 7) === 0) {
+            return url($m['ruta']);
+        }
         return url('uploads/media/' . $m['ruta']);
     }
 
