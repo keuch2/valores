@@ -9,11 +9,17 @@
   </div>
 </section>
 
-<?php if (!empty($s['contenido'])): ?>
-  <?= $s['contenido'] /* HTML de secciones, controlado por el CMS */ ?>
-<?php else: ?>
-  <section class="section"><div class="container"><p class="text-gray-txt"><?= e((string) $s['descripcion_corta']) ?></p></div></section>
-<?php endif; ?>
+<section class="section">
+  <div class="container">
+    <div class="max-w-4xl mx-auto prose">
+      <?php if (!empty($s['contenido'])): ?>
+        <?= $s['contenido'] /* HTML de secciones (h2/p/srv-features), controlado por el CMS */ ?>
+      <?php else: ?>
+        <p class="text-gray-txt"><?= e((string) $s['descripcion_corta']) ?></p>
+      <?php endif; ?>
+    </div>
+  </div>
+</section>
 
 <!-- CTA final común -->
 <section class="cta-strip">
