@@ -28,7 +28,7 @@ $na = fn(string $k) => $act === $k ? ' active' : '';
     }
   </script>
 </head>
-<body>
+<body class="font-quicksand">
 
 <div class="topbar py-2">
   <div class="container flex justify-between items-center">

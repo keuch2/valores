@@ -135,6 +135,9 @@
       if (!raw) return;
       var data = JSON.parse(raw);
       if (!data.tipo) return;
+      // Restaurar los valores que el usuario ya había cargado, pero SIN elegir
+      // tipo ni saltar de paso: el wizard siempre arranca en el Paso 0 para que
+      // el usuario confirme el tipo de cliente antes de continuar.
       Object.keys(data.campos || {}).forEach(function (name) {
         var val = data.campos[name];
         var f = form.querySelector('[name="' + CSS.escape(name) + '"]');
@@ -144,9 +147,6 @@
           m.checked = true;
         } else f.value = val;
       });
-      elegirTipo(data.tipo);
-      pasoActual = Math.min(data.paso || 0, pasosVisibles.length - 1);
-      mostrarPaso();
     } catch (e) {}
   }
 

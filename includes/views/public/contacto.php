@@ -1,8 +1,9 @@
 <?php /** Contacto. Recibe $faqs. */ $sitio = $GLOBALS['_sitio']; $wa = preg_replace('/[^0-9]/', '', $sitio['contacto_whatsapp']); ?>
-<section class="hero-inner" style="background:var(--color-blue-inst);color:#fff">
-  <div class="container py-14">
-    <div class="section-tag" style="color:var(--color-naranja)">Contacto</div>
-    <h1 class="text-3xl md:text-4xl font-bold mt-2">Hablemos de tus inversiones</h1>
+<section class="hero-inner has-photo" style="background-image:url('<?= e(url('assets/img/hero-contacto.webp')) ?>')">
+  <div class="container relative z-10">
+    <div class="breadcrumb"><a href="<?= e(url('')) ?>">Inicio</a> <span>/</span> <span class="text-white/80">Contacto</span></div>
+    <h1>Hablemos</h1>
+    <p>Estamos aquí para acompañarte. Ya sea que quieras invertir, que tengas una duda o que quieras conocer más sobre lo que hacemos — contáctanos.</p>
   </div>
 </section>
 

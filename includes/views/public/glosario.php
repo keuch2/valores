@@ -1,8 +1,9 @@
 <?php /** Glosario financiero. Recibe $terminos. */ ?>
-<section class="hero-inner" style="background:var(--color-blue-inst);color:#fff">
-  <div class="container py-14">
-    <div class="section-tag" style="color:var(--color-naranja)">Herramientas</div>
-    <h1 class="text-3xl md:text-4xl font-bold mt-2">Glosario financiero</h1>
+<section class="hero-inner">
+  <div class="container relative z-10">
+    <div class="breadcrumb"><a href="<?= e(url('')) ?>">Inicio</a> <span>/</span> <span class="text-white/80">Glosario</span></div>
+    <h1>Glosario financiero</h1>
+    <p>Los términos del mercado de capitales, explicados en lenguaje claro. Una herramienta para invertir con más confianza.</p>
   </div>
 </section>
 <section class="section">

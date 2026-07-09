@@ -1,9 +1,9 @@
 <?php /** Detalle de servicio. Recibe $s. */ ?>
-<section class="hero-inner" style="background:var(--color-blue-inst);color:#fff">
-  <div class="container py-14">
-    <div class="section-tag" style="color:var(--color-naranja)">Servicio</div>
-    <h1 class="text-3xl md:text-4xl font-bold mt-2"><?php if (!empty($s['icono'])): ?><i class="fa-solid <?= e($s['icono']) ?>"></i> <?php endif; ?><?= e($s['titulo']) ?></h1>
-    <?php if (!empty($s['descripcion_corta'])): ?><p class="text-white/80 mt-3 max-w-2xl"><?= e($s['descripcion_corta']) ?></p><?php endif; ?>
+<section class="hero-inner has-photo" style="background-image:url('<?= e(url('assets/img/hero-servicios.webp')) ?>')">
+  <div class="container relative z-10">
+    <div class="breadcrumb"><a href="<?= e(url('')) ?>">Inicio</a> <span>/</span> <a href="<?= e(url('servicios')) ?>">Servicios</a> <span>/</span> <span class="text-white/80"><?= e($s['titulo']) ?></span></div>
+    <h1><?php if (!empty($s['icono'])): ?><i class="fa-solid <?= e($s['icono']) ?>"></i> <?php endif; ?><?= e($s['titulo']) ?></h1>
+    <?php if (!empty($s['descripcion_corta'])): ?><p><?= e($s['descripcion_corta']) ?></p><?php endif; ?>
   </div>
 </section>
 <section class="section">

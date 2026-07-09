@@ -1,8 +1,9 @@
 <?php /** Nosotros. Recibe $ejecutivos. */ ?>
-<section class="hero-inner" style="background:var(--color-blue-inst);color:#fff">
-  <div class="container py-14">
-    <div class="section-tag" style="color:var(--color-naranja)">Nosotros</div>
-    <h1 class="text-3xl md:text-4xl font-bold mt-2">+33 años construyendo el mercado de capitales</h1>
+<section class="hero-inner has-photo" style="background-image:url('<?= e(url('assets/img/hero-nosotros.webp')) ?>')">
+  <div class="container relative z-10">
+    <div class="breadcrumb"><a href="<?= e(url('')) ?>">Inicio</a> <span>/</span> <span class="text-white/80">Nosotros</span></div>
+    <h1>Más de 33 años construyendo<br/>el mercado de capitales paraguayo</h1>
+    <p>Una firma con historia, con propósito y con la mirada siempre puesta en el futuro del mercado financiero del Paraguay.</p>
   </div>
 </section>
 

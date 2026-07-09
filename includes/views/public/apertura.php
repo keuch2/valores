@@ -1,9 +1,9 @@
 <?php /** Wizard de apertura. Recibe $pasosFisica, $pasosJuridica. */ ?>
-<section class="hero-inner" style="background:var(--color-blue-inst);color:#fff">
-  <div class="container py-12">
-    <div class="section-tag" style="color:var(--color-naranja)">Apertura de cuenta</div>
-    <h1 class="text-3xl md:text-4xl font-bold mt-2">Abrí tu cuenta en Valores</h1>
-    <p class="text-white/80 mt-3 max-w-2xl">Completá el formulario paso a paso. Tus datos se guardan en tu navegador mientras avanzás, y se envían cifrados al confirmar.</p>
+<section class="hero-inner">
+  <div class="container relative z-10">
+    <div class="breadcrumb"><a href="<?= e(url('')) ?>">Inicio</a> <span>/</span> <span class="text-white/80">Apertura de Cuenta</span></div>
+    <h1>Abrí tu cuenta<br/>de inversión</h1>
+    <p>Completá el formulario paso a paso. Tus datos se guardan en tu navegador mientras avanzás, y se envían cifrados al confirmar.</p>
   </div>
 </section>
 
@@ -23,7 +23,7 @@
 
       <!-- PASO 0: tipo de persona -->
       <div class="ap-step" data-rama="all" data-step="0">
-        <div class="card">
+        <div class="card p-8">
           <h2 class="text-xl font-bold text-blue-inst mb-4">¿Cómo querés abrir tu cuenta?</h2>
           <div class="grid md:grid-cols-3 gap-4">
             <button type="button" class="ap-tipo-btn card p-6 text-center" data-tipo="fisica">
@@ -45,7 +45,7 @@
       <!-- Pasos Persona Física / Conjunta (comparten los campos base) -->
       <?php foreach ($pasosFisica as $i => $paso): ?>
         <div class="ap-step" data-rama="fisica conjunta" data-step="<?= $i + 1 ?>" style="display:none">
-          <div class="card">
+          <div class="card p-8">
             <h2 class="text-xl font-bold text-blue-inst mb-4"><?= e($paso['titulo']) ?></h2>
             <?php foreach ($paso['campos'] as $c) { require APP_ROOT . '/includes/views/public/_campo_apertura.php'; } ?>
 
@@ -65,7 +65,7 @@
       <!-- Pasos Persona Jurídica (provisional) -->
       <?php foreach ($pasosJuridica as $i => $paso): ?>
         <div class="ap-step" data-rama="juridica" data-step="<?= $i + 1 ?>" style="display:none">
-          <div class="card">
+          <div class="card p-8">
             <h2 class="text-xl font-bold text-blue-inst mb-4"><?= e($paso['titulo']) ?></h2>
             <?php if (!empty($paso['repeater'])): ?>
               <div class="ap-repeater" data-clave="<?= e($paso['clave']) ?>" data-min="<?= (int) $paso['min'] ?>">
@@ -87,7 +87,7 @@
 
       <!-- Paso final: firma + revisión (común) -->
       <div class="ap-step" data-rama="fisica conjunta juridica" data-step="99" style="display:none">
-        <div class="card">
+        <div class="card p-8">
           <h2 class="text-xl font-bold text-blue-inst mb-4">Firma y confirmación</h2>
           <div class="form-group">
             <label class="form-label" for="ap-firma">Imagen de tu firma (JPG o PNG) *</label>

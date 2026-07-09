@@ -1,7 +1,10 @@
 # ============================================================================
 #  Valores CMS — .htaccess raíz
 #  Front-controller + friendly URLs + cabeceras de seguridad
-#  Base de la app: /valores-app/  (servida desde localhost/valores-app/)
+#
+#  PORTABLE: funciona sin importar en qué subcarpeta se sirva la app
+#  (local: /valores-app/  ·  producción: /valores/). No hardcodea la ruta base:
+#  RewriteBase se infiere y los bloqueos usan reglas relativas.
 # ============================================================================
 
 # --- Cabeceras de seguridad ---
@@ -13,17 +16,18 @@
     Header always set Content-Security-Policy "default-src 'self'; img-src 'self' data: https:; style-src 'self' 'unsafe-inline' https:; script-src 'self' 'unsafe-inline' https:; font-src 'self' https: data:; frame-ancestors 'self';"
 </IfModule>
 
-# --- Bloquear acceso directo a carpetas internas (defensa en profundidad) ---
-# (cada carpeta además trae su propio .htaccess "Deny from all")
-RedirectMatch 403 ^/valores-app/(includes|database|config)(/.*)?$
-
 # --- No listar directorios ---
 Options -Indexes
 
 # --- Front-controller / friendly URLs ---
 <IfModule mod_rewrite.c>
     RewriteEngine On
-    RewriteBase /valores-app/
+    # Sin RewriteBase: Apache infiere la base del directorio del .htaccess,
+    # así el mismo archivo sirve en cualquier subcarpeta.
+
+    # Bloquear carpetas internas (defensa en profundidad; además cada una trae
+    # su propio .htaccess "Deny from all"). Relativo a la base de la app.
+    RewriteRule ^(includes|database|config)(/|$) - [F]
 
     # No reescribir el panel admin (tiene su propio router)
     RewriteRule ^admin(/.*)?$ - [L]

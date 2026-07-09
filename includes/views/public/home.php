@@ -1,15 +1,45 @@
 <?php /** Home. Recibe $servicios, $oportunidades, $tasas. */ ?>
-<section class="hero-main" style="background:linear-gradient(135deg,var(--color-blue-inst),var(--color-blue-fin));color:#fff">
-  <div class="container py-20">
-    <div class="max-w-2xl animate-fade-up">
-      <div class="section-tag" style="color:var(--color-naranja)">+33 años de trayectoria</div>
-      <h1 class="text-4xl md:text-5xl font-bold mt-3 mb-4">Inversiones con la Casa de Bolsa líder del Paraguay</h1>
-      <p class="text-white/80 text-lg mb-8">Intermediación bursátil, bonos, CDAs, acciones y estructuración fiduciaria, con el respaldo de los que más saben del mercado de capitales.</p>
-      <div class="flex flex-wrap gap-3">
-        <a href="<?= e(url('apertura-de-cuenta')) ?>" class="btn btn-primary btn-lg">Abrir mi Cuenta</a>
-        <a href="<?= e(url('oportunidades')) ?>" class="btn btn-secondary btn-lg">Ver oportunidades</a>
+<section class="hero-main">
+  <div class="container relative z-10 py-24 lg:py-32">
+    <div class="max-w-2xl">
+      <div class="hero-eyebrow animate-fade-up">
+        <span></span> Más de 30 años en el Mercado de Valores del Paraguay
+      </div>
+      <h1 class="animate-fade-up animate-delay-1">
+        Desde 1993 <em>impulsando inversiones</em> en el Paraguay
+      </h1>
+      <p class="animate-fade-up animate-delay-2">
+        Somos la Casa de Bolsa con mayor trayectoria en Paraguay. Te acompañamos en cada decisión de inversión con ética, experiencia y herramientas de primer nivel.
+      </p>
+      <div class="flex flex-wrap gap-4 animate-fade-up animate-delay-3">
+        <a href="<?= e(url('apertura-de-cuenta')) ?>" class="btn btn-primary btn-lg">Quiero invertir →</a>
+        <a href="<?= e(url('oportunidades')) ?>" class="btn btn-ghost btn-lg">Ver mis opciones</a>
+      </div>
+      <div class="flex flex-wrap gap-6 mt-10 animate-fade-up animate-delay-4">
+        <div class="flex items-center gap-2 text-white/70 text-sm">
+          <span class="w-2 h-2 rounded-full bg-celeste block"></span> Sin costos de apertura
+        </div>
+        <div class="flex items-center gap-2 text-white/70 text-sm">
+          <span class="w-2 h-2 rounded-full bg-celeste block"></span> Asesoramiento personalizado
+        </div>
+        <div class="flex items-center gap-2 text-white/70 text-sm">
+          <span class="w-2 h-2 rounded-full bg-celeste block"></span> Regulado por la SIV (BCP)
+        </div>
       </div>
     </div>
+  </div>
+  <!-- Abstract graphic -->
+  <div class="hero-graphic" aria-hidden="true">
+    <svg viewBox="0 0 400 400" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <circle cx="200" cy="200" r="180" stroke="white" stroke-width="0.5"/>
+      <circle cx="200" cy="200" r="140" stroke="white" stroke-width="0.5"/>
+      <circle cx="200" cy="200" r="100" stroke="white" stroke-width="0.5"/>
+      <path d="M60 280 L120 220 L160 250 L200 180 L240 210 L280 160 L340 120" stroke="white" stroke-width="1.5" fill="none"/>
+      <circle cx="120" cy="220" r="4" fill="white"/>
+      <circle cx="200" cy="180" r="4" fill="white"/>
+      <circle cx="280" cy="160" r="4" fill="white"/>
+      <circle cx="340" cy="120" r="6" fill="#2E6B96"/>
+    </svg>
   </div>
 </section>
 

@@ -1,8 +1,9 @@
 <?php /** Página servicios. Recibe $servicios. */ ?>
-<section class="hero-inner" style="background:var(--color-blue-inst);color:#fff">
-  <div class="container py-14">
-    <div class="section-tag" style="color:var(--color-naranja)">Servicios</div>
-    <h1 class="text-3xl md:text-4xl font-bold mt-2">Todo lo que Valores puede hacer por vos</h1>
+<section class="hero-inner has-photo" style="background-image:url('<?= e(url('assets/img/hero-servicios.webp')) ?>')">
+  <div class="container relative z-10">
+    <div class="breadcrumb"><a href="<?= e(url('')) ?>">Inicio</a> <span>/</span> <span class="text-white/80">Servicios</span></div>
+    <h1>Todo lo que Valores<br/>puede hacer por vos</h1>
+    <p>Desde la intermediación bursátil hasta la estructuración de emisiones complejas. Soluciones financieras con ética, experiencia y criterio técnico de primer nivel.</p>
   </div>
 </section>
 <section class="section">

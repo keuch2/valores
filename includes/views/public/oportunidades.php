@@ -1,9 +1,9 @@
 <?php /** Oportunidades dinámicas. Recibe $oportunidades, $tipoActivo. */ ?>
-<section class="hero-inner" style="background:var(--color-blue-inst);color:#fff">
-  <div class="container py-14">
-    <div class="section-tag" style="color:var(--color-naranja)">Tablero de inversión</div>
-    <h1 class="text-3xl md:text-4xl font-bold mt-2">Oportunidades de inversión vigentes</h1>
-    <p class="text-white/80 mt-3 max-w-2xl">Instrumentos disponibles en el Mercado de Valores, actualizados por nuestro equipo. Tasas, plazos y calificaciones orientativas.</p>
+<section class="hero-inner">
+  <div class="container relative z-10">
+    <div class="breadcrumb"><a href="<?= e(url('')) ?>">Inicio</a> <span>/</span> <a href="<?= e(url('oportunidades')) ?>">Invierte</a> <span>/</span> <span class="text-white/80">Oportunidades</span></div>
+    <h1>Tablero de Oportunidades</h1>
+    <p>Instrumentos activos en el Mercado de Valores paraguayo disponibles para inversión. Filtrá por tipo, moneda o calificación y encontrá la opción ideal para tu perfil.</p>
   </div>
 </section>
 <section class="section">
