@@ -121,9 +121,12 @@ $servicios = [
     ],
 ];
 
-$upd = $pdo->prepare('UPDATE servicios SET descripcion_corta = :d, contenido = :c WHERE slug = :s');
+// Solo datos: descripción corta. El DISEÑO del detalle de cada servicio vive en
+// el código (includes/views/public/servicios/{slug}.php), no en la BD. La columna
+// `contenido` queda sin usar para el detalle (se limpia; ver más abajo).
+$upd = $pdo->prepare('UPDATE servicios SET descripcion_corta = :d, contenido = NULL WHERE slug = :s');
 foreach ($servicios as $slug => $s) {
-    $upd->execute([':d' => $s['desc'], ':c' => $s['contenido'], ':s' => $slug]);
+    $upd->execute([':d' => $s['desc'], ':s' => $slug]);
 }
 echo 'Servicios actualizados: ' . count($servicios) . "\n";
 
