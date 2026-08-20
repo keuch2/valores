@@ -51,18 +51,21 @@ INSERT INTO configuracion (clave, valor, grupo) VALUES
   ('apertura_firma_max_bytes', '5242880', 'apertura'),
   ('apertura_firma_formatos',  'jpg,jpeg,png', 'apertura'),
   ('apertura_email_agente_asunto', 'Nueva solicitud de apertura de cuenta', 'apertura'),
-  ('apertura_email_cliente_asunto', 'Recibimos tu solicitud — Valores Casa de Bolsa', 'apertura');
+  ('apertura_email_cliente_asunto', 'Recibimos tu solicitud — Valores Casa de Bolsa', 'apertura'),
+  ('apertura_whatsapp', '+595 994 100 003', 'apertura');
 
 -- ----------------------------------------------------------------------------
---  Servicios (6 reales del sitio actual)
+--  Servicios (8 según revisión editorial del cliente, ago-2026)
 -- ----------------------------------------------------------------------------
 INSERT INTO servicios (titulo, slug, icono, descripcion_corta, orden, activo) VALUES
-  ('Intermediación Bursátil', 'intermediacion-bursatil', 'fa-building', 'Compra y venta de instrumentos en el mercado de valores paraguayo.', 1, 1),
-  ('Mercado Internacional', 'mercado-internacional', 'fa-globe', 'Acceso a mercados internacionales a través de nuestros socios.', 2, 1),
-  ('Análisis Económico y Financiero', 'analisis-financiero', 'fa-chart-line', 'Informes y análisis del mercado para decisiones informadas.', 3, 1),
-  ('Asociación Público-Privada (APP)', 'app', 'fa-handshake', 'Estructuración y participación en proyectos APP.', 4, 1),
-  ('Estructuración Fiduciaria', 'estructuracion-fiduciaria', 'fa-shield-halved', 'Diseño y administración de fideicomisos.', 5, 1),
-  ('Reportes de Mercado', 'reportes', 'fa-file-lines', 'Boletines e informes periódicos del mercado de capitales.', 6, 1);
+  ('Intermediación Bursátil', 'intermediacion-bursatil', 'fa-building', 'Comprá y vendé valores en la Bolsa de Valores y Productos de Asunción con el respaldo de nuestros corredores especializados.', 1, 1),
+  ('Mercados Internacionales', 'mercado-internacional', 'fa-globe', 'Acceso a oportunidades de inversión y financiamiento en mercados internacionales, diversificación de portafolios y operaciones con instrumentos globales.', 2, 1),
+  ('Análisis Económico y Financiero', 'analisis-financiero', 'fa-chart-line', 'Análisis de empresas, sectores y mercados para apoyar la toma de decisiones de inversión y financiamiento.', 3, 1),
+  ('Estructuración de Financiamiento', 'estructuracion-de-financiamiento', 'fa-coins', 'Diseño y estructuración de alternativas de financiamiento a través del mercado de valores, incluyendo emisiones de bonos, acciones y otros instrumentos.', 4, 1),
+  ('Estructuración Fiduciaria', 'estructuracion-fiduciaria', 'fa-shield-halved', 'Diseño de estructuras fiduciarias orientadas a proyectos de inversión, financiamiento, administración de activos y generación de vehículos especializados.', 5, 1),
+  ('Asociación Público-Privada (APP)', 'app', 'fa-handshake', 'Asesoramiento financiero y estructuración de proyectos bajo esquemas de participación público-privada, desde el análisis de viabilidad hasta la estructuración financiera.', 6, 1),
+  ('Asesoramiento Financiero Corporativo', 'asesoramiento-financiero-corporativo', 'fa-briefcase', 'Acompañamiento a empresas en decisiones estratégicas de financiamiento, inversión, reorganización financiera y acceso al mercado de capitales.', 7, 1),
+  ('Reportes de Mercado', 'reportes', 'fa-file-lines', 'Elaboración de reportes financieros, análisis de mercado, seguimiento de emisiones, tasas, instrumentos y principales indicadores para facilitar la toma de decisiones.', 8, 1);
 
 -- ----------------------------------------------------------------------------
 --  Ejecutivos / Plana directiva (3 reales; foto/email/tel a completar)

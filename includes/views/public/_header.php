@@ -55,16 +55,17 @@ $na = fn(string $k) => $act === $k ? ' active' : '';
           <?php foreach (Publico::servicios() as $sv): ?>
             <a href="<?= e(url('servicios/' . $sv['slug'])) ?>" class="dropdown-item"><div><strong><?= e($sv['titulo']) ?></strong><small><?= e(mb_strimwidth((string) $sv['descripcion_corta'], 0, 40, '…')) ?></small></div></a>
           <?php endforeach; ?>
+          <a href="<?= e(url('investor-pass')) ?>" class="dropdown-item"><div><strong>Investor Pass</strong><small>Residencia por inversión</small></div></a>
         </div>
       </div>
 
       <div class="nav-item">
-        <button class="nav-link">Invierte <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg></button>
+        <button class="nav-link">Invertí <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg></button>
         <div class="dropdown-menu mega">
           <a href="<?= e(url('oportunidades?tipo=bono')) ?>" class="dropdown-item"><div><strong>Bonos</strong><small>Deuda corporativa y municipal</small></div></a>
           <a href="<?= e(url('oportunidades?tipo=cda')) ?>" class="dropdown-item"><div><strong>CDAs</strong><small>Certificados de depósito</small></div></a>
           <a href="<?= e(url('oportunidades?tipo=accion')) ?>" class="dropdown-item"><div><strong>Acciones</strong><small>Participación en empresas</small></div></a>
-          <a href="<?= e(url('oportunidades?tipo=inter')) ?>" class="dropdown-item"><div><strong>Mercado Internacional</strong><small>Exposición global</small></div></a>
+          <a href="<?= e(url('oportunidades?tipo=inter')) ?>" class="dropdown-item"><div><strong>Mercado Internacional</strong><small>Exposición global con INVIU</small></div></a>
           <a href="<?= e(url('oportunidades')) ?>" class="dropdown-item"><div><strong>Oportunidades</strong><small>Tablero de inversión</small></div></a>
         </div>
       </div>
@@ -72,7 +73,7 @@ $na = fn(string $k) => $act === $k ? ' active' : '';
       <div class="nav-item">
         <button class="nav-link">Herramientas <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg></button>
         <div class="dropdown-menu">
-          <a href="<?= e(url('#simulador')) ?>" class="dropdown-item"><div><strong>Simulador</strong><small>Calcula tu rentabilidad</small></div></a>
+          <a href="<?= e(url('#simulador')) ?>" class="dropdown-item"><div><strong>Simulador</strong><small>Calculá tu rentabilidad</small></div></a>
           <a href="<?= e(url('glosario')) ?>" class="dropdown-item"><div><strong>Glosario</strong><small>Términos financieros</small></div></a>
         </div>
       </div>
@@ -113,10 +114,11 @@ $na = fn(string $k) => $act === $k ? ' active' : '';
         <?php foreach (Publico::servicios() as $sv): ?>
           <a href="<?= e(url('servicios/' . $sv['slug'])) ?>"><?= e($sv['titulo']) ?></a>
         <?php endforeach; ?>
+        <a href="<?= e(url('investor-pass')) ?>">Investor Pass</a>
       </div>
     </div>
     <div>
-      <button class="mobile-dropdown-toggle">Invierte <svg class="w-4 h-4 m-chevron" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg></button>
+      <button class="mobile-dropdown-toggle">Invertí <svg class="w-4 h-4 m-chevron" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg></button>
       <div class="mobile-dropdown-content">
         <a href="<?= e(url('oportunidades?tipo=bono')) ?>">Bonos</a>
         <a href="<?= e(url('oportunidades?tipo=cda')) ?>">CDAs</a>

@@ -214,5 +214,12 @@ function apertura_etiquetas(string $tipo): array
             $map[$c['n']] = $c['l'];
         }
     }
-    return $map;
+    // Claves del flujo simple de apertura (formulario corto + WhatsApp);
+    // van primero para que el detalle admin las muestre arriba.
+    return [
+        'nombre_completo' => 'Nombre completo',
+        'telefono'        => 'Teléfono',
+        'email'           => 'Correo electrónico',
+        'ciudad_pais'     => 'Ciudad / País',
+    ] + $map;
 }

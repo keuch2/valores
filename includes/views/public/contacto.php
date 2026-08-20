@@ -3,7 +3,7 @@
   <div class="container relative z-10">
     <div class="breadcrumb"><a href="<?= e(url('')) ?>">Inicio</a> <span>/</span> <span class="text-white/80">Contacto</span></div>
     <h1>Hablemos</h1>
-    <p>Estamos aquí para acompañarte. Ya sea que quieras invertir, que tengas una duda o que quieras conocer más sobre lo que hacemos — contáctanos.</p>
+    <p>Estamos acá para acompañarte. Ya sea que quieras invertir, que tengas una duda o que quieras conocer más sobre lo que hacemos — contactanos.</p>
   </div>
 </section>
 
@@ -11,8 +11,9 @@
   <div class="container grid lg:grid-cols-2 gap-16">
     <!-- Formulario -->
     <div class="animate-fade-up">
-      <div class="section-tag">Escríbenos</div>
-      <h2 class="section-title mt-2">Envíanos un mensaje</h2>
+      <div class="section-tag">Escribinos</div>
+      <h2 class="section-title mt-2">Envianos un mensaje</h2>
+      <p class="text-gray-txt mt-3">Respondemos en menos de 24 horas hábiles. También podés comunicarte directamente por teléfono o WhatsApp.</p>
       <form id="contact-form" class="mt-8 space-y-5" method="post" action="<?= e(url('contacto/enviar')) ?>" novalidate>
         <?= csrf_campo() ?>
         <!-- honeypot anti-spam -->
@@ -31,7 +32,7 @@
         <button type="submit" id="contact-submit" class="btn btn-primary w-full">Enviar mensaje →</button>
         <div id="contact-success" class="hidden text-center p-5 bg-green-50 rounded-xl border border-green-200">
           <div class="font-bold text-green-800 mb-1">¡Mensaje enviado!</div>
-          <div class="text-sm text-green-700">Un asesor de Valores se comunicará contigo pronto.</div>
+          <div class="text-sm text-green-700">Un asesor de Valores se comunicará con vos pronto.</div>
         </div>
       </form>
     </div>
@@ -39,7 +40,7 @@
     <!-- Datos de contacto (dinámicos) -->
     <div class="animate-fade-up animate-delay-2">
       <div class="section-tag">Datos de contacto</div>
-      <h2 class="section-title mt-2">Encuéntranos así</h2>
+      <h2 class="section-title mt-2">Encontranos así</h2>
       <div class="mt-8 space-y-5">
         <div class="flex gap-4 p-5 bg-celeste-soft rounded-xl border border-celeste/20">
           <div class="w-12 h-12 rounded-xl bg-white flex items-center justify-center flex-shrink-0 shadow-sm"><i class="fa-solid fa-location-dot text-xl text-blue-inst"></i></div>

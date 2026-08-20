@@ -4,7 +4,7 @@
     <div class="grid lg:grid-cols-2 gap-16 items-center">
       <div class="animate-fade-up">
         <div class="section-tag">Liderazgo histórico</div>
-        <h2 class="section-title mt-2">Los pioneers del fideicomiso en Paraguay</h2>
+        <h2 class="section-title mt-2">Los pioneros del fideicomiso en Paraguay</h2>
         <p class="text-gray-txt leading-relaxed mt-4">Desde 1997, Valores Casa de Bolsa fue la primera firma en desarrollar estructuras fiduciarias en Paraguay. Ese hito marcó el inicio de un segmento que hoy es fundamental para el financiamiento corporativo y municipal del país.</p>
         <p class="text-gray-txt leading-relaxed mt-3">La titularización, el fideicomiso de garantía, el fideicomiso de administración y los fideicomisos de emisión son instrumentos que hemos perfeccionado a lo largo de décadas de experiencia real en el mercado local.</p>
         <p class="text-gray-txt leading-relaxed mt-3">Con más de 100 estructuras desarrolladas, somos la referencia técnica y operativa para cualquier entidad que busque acceder al mercado de capitales mediante una estructura fiduciaria.</p>

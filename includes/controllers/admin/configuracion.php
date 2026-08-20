@@ -28,6 +28,7 @@ function config_grupos(): array
             'smtp_pass' => 'Contraseña', 'smtp_remitente' => 'Remitente', 'smtp_encriptacion' => 'Encriptación (tls/ssl)',
         ]],
         'apertura' => ['titulo' => 'Módulo de apertura', 'campos' => [
+            'apertura_whatsapp' => 'WhatsApp para solicitudes (con código de país)',
             'apertura_firma_max_bytes' => 'Tamaño máx. firma (bytes)',
             'apertura_firma_formatos' => 'Formatos permitidos',
             'apertura_email_agente_asunto' => 'Asunto email al agente',

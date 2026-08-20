@@ -33,11 +33,12 @@ $waNum = preg_replace('/[^0-9]/', '', $sitio['contacto_whatsapp']);
           <?php foreach (Publico::servicios() as $sv): ?>
             <li><a href="<?= e(url('servicios/' . $sv['slug'])) ?>"><?= e($sv['titulo']) ?></a></li>
           <?php endforeach; ?>
+          <li><a href="<?= e(url('investor-pass')) ?>">Investor Pass</a></li>
         </ul>
       </div>
 
       <div>
-        <h4>Invierte</h4>
+        <h4>Invertí</h4>
         <ul>
           <li><a href="<?= e(url('oportunidades?tipo=bono')) ?>">Bonos</a></li>
           <li><a href="<?= e(url('oportunidades?tipo=cda')) ?>">CDAs</a></li>

@@ -3,13 +3,13 @@
   <div class="container relative z-10 py-24 lg:py-32">
     <div class="max-w-2xl">
       <div class="hero-eyebrow animate-fade-up">
-        <span></span> Más de 30 años en el Mercado de Valores del Paraguay
+        <span></span> Más de 30 años construyendo el mercado de capitales paraguayo
       </div>
       <h1 class="animate-fade-up animate-delay-1">
-        Desde 1993 <em>impulsando inversiones</em> en el Paraguay
+        Experiencia, conocimiento y <em>soluciones financieras</em> para inversores y empresas
       </h1>
       <p class="animate-fade-up animate-delay-2">
-        Somos la Casa de Bolsa con mayor trayectoria en Paraguay. Te acompañamos en cada decisión de inversión con ética, experiencia y herramientas de primer nivel.
+        Somos la Casa de Bolsa con mayor trayectoria en Paraguay. Combinamos experiencia, conocimiento y visión de largo plazo para acompañar a inversores, empresas e instituciones en sus decisiones y proyectos financieros.
       </p>
       <div class="flex flex-wrap gap-4 animate-fade-up animate-delay-3">
         <a href="<?= e(url('apertura-de-cuenta')) ?>" class="btn btn-primary btn-lg">Quiero invertir →</a>
@@ -23,7 +23,7 @@
           <span class="w-2 h-2 rounded-full bg-celeste block"></span> Asesoramiento personalizado
         </div>
         <div class="flex items-center gap-2 text-white/70 text-sm">
-          <span class="w-2 h-2 rounded-full bg-celeste block"></span> Regulado por la SIV (BCP)
+          <span class="w-2 h-2 rounded-full bg-celeste block"></span> Regulado por el Banco Central del Paraguay a través de la Superintendencia de Valores
         </div>
       </div>
     </div>
@@ -43,19 +43,41 @@
   </div>
 </section>
 
+<!-- Franja de estadísticas -->
+<section class="stats-strip">
+  <div class="container">
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-0 divide-x divide-white/10">
+      <div class="stat-item">
+        <span class="number" data-count="33" data-prefix="+" data-suffix=" años">+33 años</span>
+        <span class="label">acompañando el desarrollo del mercado de valores paraguayo</span>
+      </div>
+      <div class="stat-item">
+        <span class="number" data-count="1000" data-prefix="+" data-suffix="">+1000</span>
+        <span class="label">inversores y empresas que confían en nosotros</span>
+      </div>
+      <div class="stat-item">
+        <span class="number" data-count="100" data-prefix="+" data-suffix="">+100</span>
+        <span class="label">emisiones estructuradas exitosas</span>
+      </div>
+      <div class="stat-item">
+        <span class="number">#1</span>
+        <span class="label">Primeros estructuradores fiduciarios del país</span>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- Servicios (dinámico) -->
 <section class="section">
   <div class="container">
     <div class="text-center mb-12">
-      <div class="section-tag">Qué hacemos</div>
-      <h2 class="section-title mt-2">Nuestros servicios</h2>
+      <div class="section-tag">Nuestros Servicios</div>
+      <h2 class="section-title mt-2">Soluciones para cada etapa de tu estrategia financiera</h2>
+      <p class="text-gray-txt max-w-2xl mx-auto mt-3">Desde la primera inversión hasta la estructuración de emisiones complejas, estamos con vos.</p>
     </div>
     <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
       <?php foreach ($servicios as $sv): ?>
         <a href="<?= e(url('servicios/' . $sv['slug'])) ?>" class="card card-service animate-fade-up">
-          <?php $img = img_url((int) ($sv['imagen_id'] ?? 0)); if ($img): ?>
-            <div class="srv-thumb"><img src="<?= e($img) ?>" alt="<?= e($sv['titulo']) ?>" loading="lazy"></div>
-          <?php endif; ?>
           <h3><?php if (!empty($sv['icono'])): ?><i class="fa-solid <?= e($sv['icono']) ?>"></i> <?php endif; ?><?= e($sv['titulo']) ?></h3>
           <p><?= e($sv['descripcion_corta']) ?></p>
           <span class="link">Ver servicio →</span>

@@ -1,25 +1,45 @@
 <?php
 /**
- * Controlador público de apertura de cuenta (wizard).
+ * Controlador público de apertura de cuenta (flujo simple).
+ *
+ * El usuario elige el tipo de cuenta, deja sus datos de contacto y, tras
+ * guardarse la solicitud (round-robin de agentes + datos cifrados como
+ * siempre), se lo lleva a WhatsApp con el resumen precargado. El número
+ * destino se configura en el panel (clave `apertura_whatsapp`, con
+ * fallback a `contacto_whatsapp`).
+ *
+ * El wizard KYC multi-paso quedó desactivado; `pasos.php` se conserva
+ * porque el detalle admin de solicitudes históricas usa sus etiquetas.
  */
 
 declare(strict_types=1);
 
 require_once APP_ROOT . '/includes/apertura/pasos.php';
 
-/** Muestra el wizard (Paso 0 + pasos por rama). */
-function apertura_wizard(): void
+/** Etiquetas legibles de los tipos de cuenta. */
+function apertura_tipos(): array
 {
-    vista_publica('apertura', [
-        'pasosFisica'   => apertura_pasos_fisica(),
-        'pasosJuridica' => apertura_pasos_juridica(),
-    ], ['title' => 'Abrir cuenta — Valores', 'activo' => '']);
+    return ['fisica' => 'Persona Física', 'conjunta' => 'Cuenta Conjunta', 'juridica' => 'Persona Jurídica'];
 }
 
-/**
- * Procesa el envío del wizard (POST). Valida, sube firma, guarda con round-robin,
- * dispara emails y muestra la confirmación.
- */
+/** Muestra el formulario de apertura. */
+function apertura_wizard(): void
+{
+    vista_publica('apertura', ['error' => null, 'viejos' => []], [
+        'title' => 'Abrir cuenta — Valores', 'activo' => '',
+    ]);
+}
+
+/** Re-renderiza el formulario con un error y los valores ya cargados. */
+function apertura_reintentar(string $error, array $viejos): void
+{
+    vista_publica('apertura', ['error' => $error, 'viejos' => $viejos], [
+        'title' => 'Abrir cuenta — Valores', 'activo' => '',
+    ]);
+    exit;
+}
+
+/** Procesa el envío: valida, guarda y muestra la confirmación con enlace a WhatsApp. */
 function apertura_enviar(): void
 {
     if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
@@ -32,82 +52,75 @@ function apertura_enviar(): void
         redirigir('apertura-de-cuenta');
     }
 
-    $tipo = post('tipo_persona');
-    if (!in_array($tipo, ['fisica', 'juridica', 'conjunta'], true)) {
-        flash('error', 'Seleccioná el tipo de persona.');
-        redirigir('apertura-de-cuenta');
+    $tipos = apertura_tipos();
+    $tipo  = post('tipo_persona');
+
+    // Largos alineados a las columnas de referencia de solicitudes_apertura.
+    $nombre     = mb_substr(post('nombre_completo'), 0, 200);
+    $telefono   = mb_substr(post('telefono'), 0, 50);
+    $email      = mb_substr(post('email'), 0, 190);
+    $ciudadPais = mb_substr(post('ciudad_pais'), 0, 120);
+
+    $viejos = [
+        'tipo_persona'    => $tipo,
+        'nombre_completo' => $nombre,
+        'telefono'        => $telefono,
+        'email'           => $email,
+        'ciudad_pais'     => $ciudadPais,
+    ];
+
+    if (!isset($tipos[$tipo])) {
+        apertura_reintentar('Seleccioná el tipo de cuenta.', $viejos);
+    }
+    if ($nombre === '' || $telefono === '' || $email === '' || $ciudadPais === '') {
+        apertura_reintentar('Completá todos los campos obligatorios.', $viejos);
+    }
+    if (email_valido($email) === null) {
+        apertura_reintentar('Ingresá un correo electrónico válido.', $viejos);
     }
 
-    // La rama de campos base es física (conjunta reutiliza física); jurídica aparte.
-    $ramaCampos = ($tipo === 'juridica') ? 'juridica' : 'fisica';
-    $pasos = apertura_pasos($ramaCampos);
+    $datos = [
+        'tipo_persona'    => $tipo,
+        'nombre_completo' => $nombre,
+        'telefono'        => $telefono,
+        'email'           => $email,
+        'ciudad_pais'     => $ciudadPais,
+    ];
+    $ref = ['nombre' => $nombre, 'documento' => '', 'email' => $email, 'telefono' => $telefono];
 
-    // Recolectar datos declarados en los pasos (whitelist de nombres de campo).
-    $datos = ['tipo_persona' => $tipo];
-    $faltaReq = null;
-    foreach ($pasos as $paso) {
-        // Los repeaters (jurídica) se recogen como arreglos por nombre[].
-        if (!empty($paso['repeater'])) {
-            $filas = $_POST[$paso['clave']] ?? [];
-            $datos[$paso['clave']] = is_array($filas) ? array_values($filas) : [];
-            continue;
-        }
-        foreach ($paso['campos'] as $c) {
-            $n = $c['n'];
-            $v = $c['t'] === 'checkbox' ? (isset($_POST[$n]) ? 'si' : 'no') : post($n);
-            $datos[$n] = $v;
-            if (!empty($c['req']) && ($v === '' || $v === 'no' && $c['t'] === 'checkbox')) {
-                $faltaReq = $faltaReq ?? $c['l'];
-            }
-        }
-    }
-
-    // Titulares adicionales de la Cuenta Conjunta (anexo).
-    if ($tipo === 'conjunta' && !empty($_POST['titulares']) && is_array($_POST['titulares'])) {
-        $datos['titulares_adicionales'] = array_values($_POST['titulares']);
-    }
-
-    if ($faltaReq !== null) {
-        flash('error', 'Falta completar: ' . $faltaReq);
-        redirigir('apertura-de-cuenta');
-    }
-
-    // Firma (imagen obligatoria en el último paso).
-    $firmaId = null;
-    if (!empty($_FILES['firma']) && ($_FILES['firma']['error'] ?? UPLOAD_ERR_NO_FILE) === UPLOAD_ERR_OK) {
-        $maxFirma = (int) Config::get('apertura_firma_max_bytes', (string) UPLOAD_MAX_BYTES);
-        $rf = Media::subirFirma($_FILES['firma'], $maxFirma);
-        if (!$rf['ok']) {
-            flash('error', $rf['error']);
-            redirigir('apertura-de-cuenta');
-        }
-        $firmaId = $rf['id'];
-    }
-
-    // Datos de referencia indexables (según la rama).
-    $ref = ($tipo === 'juridica')
-        ? ['nombre' => $datos['razon_social'] ?? '', 'documento' => $datos['ruc'] ?? '', 'email' => $datos['email'] ?? '', 'telefono' => $datos['celular'] ?? '']
-        : ['nombre' => $datos['nombres'] ?? '', 'documento' => $datos['documento'] ?? '', 'email' => $datos['email'] ?? '', 'telefono' => $datos['celular'] ?? ''];
-
-    $r = Solicitud::crear($tipo, $datos, $ref, $firmaId);
+    $r = Solicitud::crear($tipo, $datos, $ref, null);
     if (!$r['ok']) {
-        flash('error', $r['error']);
-        redirigir('apertura-de-cuenta');
+        apertura_reintentar($r['error'], $viejos);
     }
 
     // Emails (no bloquear la confirmación si fallan).
     require_once APP_ROOT . '/includes/core/mailer.php';
-    apertura_notificar($r['id'], $tipo, $ref, $r['agente'] ?? null);
+    apertura_notificar((int) $r['id'], $tipo, $ref, $r['agente'] ?? null, $ciudadPais);
 
-    // Confirmación.
+    // Enlace a WhatsApp con el resumen de la solicitud.
+    $numRaw = (string) (Config::get('apertura_whatsapp', '') ?: Config::get('contacto_whatsapp', ''));
+    $num    = preg_replace('/[^0-9]/', '', $numRaw);
+    $waUrl  = null;
+    if ($num !== '') {
+        $msj = "Hola, quiero abrir una cuenta en Valores Casa de Bolsa.\n"
+            . "Tipo de cuenta: {$tipos[$tipo]}\n"
+            . "Nombre completo: {$nombre}\n"
+            . "Teléfono: {$telefono}\n"
+            . "Email: {$email}\n"
+            . "Ciudad / País: {$ciudadPais}\n"
+            . "Solicitud N° {$r['id']}";
+        $waUrl = 'https://wa.me/' . $num . '?text=' . rawurlencode($msj);
+    }
+
     vista_publica('apertura-ok', [
         'numero' => $r['id'],
         'agente' => $r['agente'] ?? null,
+        'waUrl'  => $waUrl,
     ], ['title' => 'Solicitud recibida — Valores', 'activo' => '']);
 }
 
 /** Envía los correos al agente asignado y (opcional) al cliente. */
-function apertura_notificar(int $id, string $tipo, array $ref, ?array $agente): void
+function apertura_notificar(int $id, string $tipo, array $ref, ?array $agente, string $ciudadPais = ''): void
 {
     $panelUrl = (isset($_SERVER['HTTP_HOST']) ? 'https://' . $_SERVER['HTTP_HOST'] : '')
         . url('admin/?r=solicitudes/ver&id=' . $id);
@@ -117,9 +130,10 @@ function apertura_notificar(int $id, string $tipo, array $ref, ?array $agente): 
         $asunto = Config::get('apertura_email_agente_asunto', 'Nueva solicitud de apertura de cuenta');
         $cuerpo = "Se registró una nueva solicitud de apertura (#{$id}).\n\n"
             . "Tipo: {$tipo}\n"
-            . "Referencia: {$ref['nombre']} — Doc: {$ref['documento']}\n"
-            . "Contacto: {$ref['email']} / {$ref['telefono']}\n\n"
-            . "Ver el detalle completo en el panel:\n{$panelUrl}\n";
+            . "Referencia: {$ref['nombre']}\n"
+            . "Contacto: {$ref['email']} / {$ref['telefono']}\n"
+            . ($ciudadPais !== '' ? "Ciudad / País: {$ciudadPais}\n" : '')
+            . "\nVer el detalle completo en el panel:\n{$panelUrl}\n";
         mailer_enviar($agente['email'], $asunto, $cuerpo);
     }
 

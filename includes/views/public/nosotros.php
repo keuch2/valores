@@ -10,8 +10,12 @@
 <section class="section">
   <div class="container max-w-3xl">
     <div class="section-tag">Quiénes somos</div>
-    <h2 class="section-title mt-2">La Casa de Bolsa con mayor trayectoria del Paraguay</h2>
-    <p class="text-gray-txt leading-relaxed mt-4">Valores Casa de Bolsa S.A. acompaña a inversores e instituciones en el mercado de capitales paraguayo con más de tres décadas de experiencia, regulada por la Comisión Nacional de Valores.</p>
+    <h2 class="section-title mt-2">Una firma con propósito, con ética y con experiencia</h2>
+    <p class="text-gray-txt leading-relaxed mt-4">En Valores trabajamos todos los días para acercar el mercado de capitales a las personas y a las empresas que quieren crecer de manera sólida y sostenible.</p>
+    <p class="text-gray-txt leading-relaxed mt-3">Somos agentes organizadores y estructuradores de emisiones de acciones y títulos de deuda para entidades privadas y municipales a nivel nacional, acompañando cada proyecto con seriedad, conocimiento y una mirada estratégica.</p>
+    <p class="text-gray-txt leading-relaxed mt-3">Fuimos pioneros en el desarrollo de estructuras fiduciarias en Paraguay e impulsores de la figura de la titularización, marcando hitos que ayudaron a fortalecer y modernizar el mercado de valores del país.</p>
+    <p class="text-gray-txt leading-relaxed mt-3">Con más de 33 años de trayectoria, diseñamos opciones de inversión a medida, entendiendo que detrás de cada inversor y cada emisor hay objetivos, desafíos y proyectos únicos.</p>
+    <p class="text-gray-txt leading-relaxed mt-3">Hoy seguimos evolucionando, con una mirada puesta también en el mercado inmobiliario, con el firme propósito de facilitar soluciones financieras sólidas, transparentes y confiables.</p>
   </div>
 </section>
 

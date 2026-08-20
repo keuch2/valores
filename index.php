@@ -100,6 +100,14 @@ switch ($pagina) {
         vista_publica('contacto', ['faqs' => Publico::faqs('contacto')], ['title' => 'Contacto — Valores', 'activo' => 'contacto']);
         break;
 
+    case 'investor-pass':
+        vista_publica('investor-pass', [], [
+            'title' => 'Investor Pass — Residencia permanente por inversión — Valores',
+            'desc'  => 'Residencia permanente en Paraguay a través de la inversión. Te acompañamos en cada etapa del programa Paraguay Investor Pass.',
+            'activo'=> 'servicios',
+        ]);
+        break;
+
     case 'glosario':
         vista_publica('glosario', ['terminos' => Publico::glosario()], ['title' => 'Glosario financiero — Valores', 'activo' => 'invierte']);
         break;

@@ -1,112 +1,76 @@
-<?php /** Wizard de apertura. Recibe $pasosFisica, $pasosJuridica. */ ?>
+<?php /** Apertura de cuenta (flujo simple). Recibe $error (string|null) y $viejos (array). */
+$viejos = $viejos ?? [];
+$error  = $error ?? null;
+$tipoSel = (string) ($viejos['tipo_persona'] ?? '');
+?>
 <section class="hero-inner">
   <div class="container relative z-10">
     <div class="breadcrumb"><a href="<?= e(url('')) ?>">Inicio</a> <span>/</span> <span class="text-white/80">Apertura de Cuenta</span></div>
     <h1>Abrí tu cuenta<br/>de inversión</h1>
-    <p>Completá el formulario paso a paso. Tus datos se guardan en tu navegador mientras avanzás, y se envían cifrados al confirmar.</p>
+    <p>Elegí el tipo de cuenta, dejanos tus datos y seguimos la conversación por WhatsApp con un asesor de Valores.</p>
   </div>
 </section>
 
 <section class="section">
   <div class="container" style="max-width:760px">
-
-    <!-- Barra de progreso -->
-    <div class="ap-progress" id="ap-progress" style="display:none">
-      <div class="ap-progress-bar"><div class="ap-progress-fill" id="ap-progress-fill"></div></div>
-      <div class="ap-progress-label"><span id="ap-step-num">1</span> / <span id="ap-step-total">1</span> — <span id="ap-step-title"></span></div>
-    </div>
-
-    <form id="apertura-form" method="post" action="<?= e(url('apertura-de-cuenta/enviar')) ?>" enctype="multipart/form-data" novalidate>
+    <form id="apertura-form" method="post" action="<?= e(url('apertura-de-cuenta/enviar')) ?>">
       <?= csrf_campo() ?>
+      <!-- honeypot anti-spam -->
       <input type="text" name="website" value="" style="display:none" tabindex="-1" autocomplete="off">
-      <input type="hidden" name="tipo_persona" id="tipo_persona" value="">
 
-      <!-- PASO 0: tipo de persona -->
-      <div class="ap-step" data-rama="all" data-step="0">
-        <div class="card p-8">
-          <h2 class="text-xl font-bold text-blue-inst mb-4">¿Cómo querés abrir tu cuenta?</h2>
-          <div class="grid md:grid-cols-3 gap-4">
-            <button type="button" class="ap-tipo-btn card p-6 text-center" data-tipo="fisica">
-              <div class="text-3xl mb-2">👤</div><div class="font-bold text-blue-inst">Persona Física</div>
-              <div class="text-xs text-gray-txt mt-1">Cuenta individual a tu nombre.</div>
-            </button>
-            <button type="button" class="ap-tipo-btn card p-6 text-center" data-tipo="conjunta">
-              <div class="text-3xl mb-2">👥</div><div class="font-bold text-blue-inst">Cuenta Conjunta</div>
-              <div class="text-xs text-gray-txt mt-1">Dos o más titulares personas físicas.</div>
-            </button>
-            <button type="button" class="ap-tipo-btn card p-6 text-center" data-tipo="juridica">
-              <div class="text-3xl mb-2">🏢</div><div class="font-bold text-blue-inst">Persona Jurídica</div>
-              <div class="text-xs text-gray-txt mt-1">Cuenta a nombre de una empresa.</div>
-            </button>
-          </div>
+      <?php if ($error): ?>
+        <div class="p-4 mb-6 bg-red-50 border border-red-200 rounded-xl text-sm text-red-700"><?= e($error) ?></div>
+      <?php endif; ?>
+
+      <!-- Tipo de cuenta -->
+      <div class="card p-8">
+        <h2 class="text-xl font-bold text-blue-inst mb-4">¿Cómo querés abrir tu cuenta?</h2>
+        <div class="grid md:grid-cols-3 gap-4">
+          <label class="ap-tipo-btn card p-6 text-center cursor-pointer">
+            <input type="radio" name="tipo_persona" value="fisica" class="sr-only" required <?= $tipoSel === 'fisica' ? 'checked' : '' ?>>
+            <div class="text-3xl mb-2">👤</div><div class="font-bold text-blue-inst">Persona Física</div>
+            <div class="text-xs text-gray-txt mt-1">Cuenta individual a tu nombre.</div>
+          </label>
+          <label class="ap-tipo-btn card p-6 text-center cursor-pointer">
+            <input type="radio" name="tipo_persona" value="conjunta" class="sr-only" required <?= $tipoSel === 'conjunta' ? 'checked' : '' ?>>
+            <div class="text-3xl mb-2">👥</div><div class="font-bold text-blue-inst">Cuenta Conjunta</div>
+            <div class="text-xs text-gray-txt mt-1">Dos o más titulares personas físicas.</div>
+          </label>
+          <label class="ap-tipo-btn card p-6 text-center cursor-pointer">
+            <input type="radio" name="tipo_persona" value="juridica" class="sr-only" required <?= $tipoSel === 'juridica' ? 'checked' : '' ?>>
+            <div class="text-3xl mb-2">🏢</div><div class="font-bold text-blue-inst">Persona Jurídica</div>
+            <div class="text-xs text-gray-txt mt-1">Cuenta a nombre de una empresa.</div>
+          </label>
         </div>
       </div>
 
-      <!-- Pasos Persona Física / Conjunta (comparten los campos base) -->
-      <?php foreach ($pasosFisica as $i => $paso): ?>
-        <div class="ap-step" data-rama="fisica conjunta" data-step="<?= $i + 1 ?>" style="display:none">
-          <div class="card p-8">
-            <h2 class="text-xl font-bold text-blue-inst mb-4"><?= e($paso['titulo']) ?></h2>
-            <?php foreach ($paso['campos'] as $c) { require APP_ROOT . '/includes/views/public/_campo_apertura.php'; } ?>
-
-            <?php if ($paso['clave'] === 'datos_personales'): ?>
-              <!-- Anexo de titulares adicionales (solo Cuenta Conjunta) -->
-              <div id="ap-titulares" data-conjunta-only style="display:none;margin-top:16px;border-top:1px dashed var(--color-gray-ui);padding-top:16px">
-                <h3 class="font-bold text-blue-inst mb-2">Titulares adicionales</h3>
-                <p class="form-hint mb-3">Agregá los demás titulares de la cuenta conjunta (nombre, documento y correo).</p>
-                <div id="ap-titulares-lista"></div>
-                <button type="button" class="btn btn-ghost btn-sm" id="ap-add-titular">+ Agregar titular</button>
-              </div>
-            <?php endif; ?>
+      <!-- Datos de contacto (se muestra al elegir el tipo) -->
+      <div id="ap-form" class="card p-8 mt-6" style="display:none">
+        <h2 class="text-xl font-bold text-blue-inst mb-1">Tus datos de contacto</h2>
+        <p class="text-sm text-gray-txt mb-6">Con estos datos un asesor te contacta y continúan por WhatsApp.</p>
+        <div class="grid md:grid-cols-2 gap-5">
+          <div class="form-group md:col-span-2">
+            <label class="form-label">Nombre completo *</label>
+            <input type="text" name="nombre_completo" class="form-input" required maxlength="200" placeholder="Nombre y apellido" value="<?= e((string) ($viejos['nombre_completo'] ?? '')) ?>"/>
           </div>
-        </div>
-      <?php endforeach; ?>
-
-      <!-- Pasos Persona Jurídica (provisional) -->
-      <?php foreach ($pasosJuridica as $i => $paso): ?>
-        <div class="ap-step" data-rama="juridica" data-step="<?= $i + 1 ?>" style="display:none">
-          <div class="card p-8">
-            <h2 class="text-xl font-bold text-blue-inst mb-4"><?= e($paso['titulo']) ?></h2>
-            <?php if (!empty($paso['repeater'])): ?>
-              <div class="ap-repeater" data-clave="<?= e($paso['clave']) ?>" data-min="<?= (int) $paso['min'] ?>">
-                <div class="ap-repeater-list"></div>
-                <button type="button" class="btn btn-ghost btn-sm ap-repeater-add">+ Agregar</button>
-                <template class="ap-repeater-tpl">
-                  <div class="ap-repeater-row card p-4 mb-3">
-                    <?php foreach ($paso['campos'] as $c) { $prefijo = $paso['clave'] . '[__i__]'; require APP_ROOT . '/includes/views/public/_campo_apertura.php'; } ?>
-                    <button type="button" class="btn btn-danger btn-sm ap-repeater-del">Quitar</button>
-                  </div>
-                </template>
-              </div>
-            <?php else: ?>
-              <?php foreach ($paso['campos'] as $c) { $prefijo = ''; require APP_ROOT . '/includes/views/public/_campo_apertura.php'; } ?>
-            <?php endif; ?>
-          </div>
-        </div>
-      <?php endforeach; ?>
-
-      <!-- Paso final: firma + revisión (común) -->
-      <div class="ap-step" data-rama="fisica conjunta juridica" data-step="99" style="display:none">
-        <div class="card p-8">
-          <h2 class="text-xl font-bold text-blue-inst mb-4">Firma y confirmación</h2>
           <div class="form-group">
-            <label class="form-label" for="ap-firma">Imagen de tu firma (JPG o PNG) *</label>
-            <input class="form-input" type="file" id="ap-firma" name="firma" accept="image/jpeg,image/png" data-req="1">
-            <p class="form-hint">Subí una foto o escaneo de tu firma. Se almacena de forma restringida.</p>
-            <div id="ap-firma-preview" style="margin-top:10px"></div>
+            <label class="form-label">Teléfono *</label>
+            <input type="tel" name="telefono" class="form-input" required maxlength="50" placeholder="+595 9XX XXX XXX" value="<?= e((string) ($viejos['telefono'] ?? '')) ?>"/>
           </div>
-          <div id="ap-revision" class="bg-gray-bg rounded-xl p-4 text-sm" style="max-height:260px;overflow:auto"></div>
+          <div class="form-group">
+            <label class="form-label">Correo electrónico *</label>
+            <input type="email" name="email" class="form-input" required maxlength="190" placeholder="tu@email.com" value="<?= e((string) ($viejos['email'] ?? '')) ?>"/>
+          </div>
+          <div class="form-group md:col-span-2">
+            <label class="form-label">Ciudad / País *</label>
+            <input type="text" name="ciudad_pais" class="form-input" required maxlength="120" placeholder="Asunción, Paraguay" value="<?= e((string) ($viejos['ciudad_pais'] ?? '')) ?>"/>
+          </div>
         </div>
-      </div>
-
-      <!-- Navegación -->
-      <div class="flex justify-between mt-6" id="ap-nav" style="display:none">
-        <button type="button" class="btn btn-ghost" id="ap-prev">← Atrás</button>
-        <button type="button" class="btn btn-primary" id="ap-next">Siguiente →</button>
-        <button type="submit" class="btn btn-primary" id="ap-submit" style="display:none">Enviar solicitud</button>
+        <button type="submit" id="ap-submit" class="btn btn-primary w-full mt-6">Enviar y continuar en WhatsApp →</button>
+        <p class="text-xs text-gray-txt text-center mt-3">Al enviar aceptás ser contactado por un asesor de Valores Casa de Bolsa.</p>
       </div>
     </form>
   </div>
 </section>
 
-<script src="<?= e(url('assets/js/apertura.js')) ?>"></script>
+<script src="<?= e(url('assets/js/apertura.js')) ?>?v=2"></script>
