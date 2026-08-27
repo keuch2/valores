@@ -304,3 +304,18 @@ CREATE TABLE IF NOT EXISTS auditoria (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 SET FOREIGN_KEY_CHECKS = 1;
+
+-- ----------------------------------------------------------------------------
+--  Oportunidades: historial de reportes diarios (PDF). El vigente se guarda en
+--  configuracion.oportunidades_pdf_id; acá queda el historial completo.
+-- ----------------------------------------------------------------------------
+CREATE TABLE IF NOT EXISTS oportunidades_reportes (
+  id          INT UNSIGNED NOT NULL AUTO_INCREMENT,
+  media_id    INT UNSIGNED NOT NULL,
+  subido_por  INT UNSIGNED NULL,
+  created_at  DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (id),
+  UNIQUE KEY uq_oprep_media (media_id),
+  CONSTRAINT fk_oprep_media FOREIGN KEY (media_id) REFERENCES media(id) ON DELETE CASCADE,
+  CONSTRAINT fk_oprep_user  FOREIGN KEY (subido_por) REFERENCES admin_users(id) ON DELETE SET NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
