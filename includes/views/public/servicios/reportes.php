@@ -1,45 +1,17 @@
-<?php /** Detalle del servicio: Reportes de Mercado. Diseño a medida (portado del sitio original). */ ?>
+<?php /** Detalle del servicio: Reportes de Mercado. Diseño a medida (contenido del cliente, ago-2026). */ ?>
 <section class="section">
   <div class="container">
-    <div class="text-center mb-10 animate-fade-up">
-      <div class="section-tag mx-auto justify-center">Publicaciones</div>
-      <h2 class="section-title mt-2">Nuestras publicaciones de mercado</h2>
-    </div>
-    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-      <div class="card p-6 animate-fade-up animate-delay-1">
-        <div class="flex items-center gap-3 mb-4"><div class="w-10 h-10 rounded-lg bg-celeste-soft flex items-center justify-center text-xl"><i class="fa-solid fa-newspaper text-blue-inst"></i></div><div class="font-bold text-blue-inst">Boletín Semanal BVA</div></div>
-        <p class="text-sm text-gray-txt mb-4">Resumen semanal de la actividad de la Bolsa de Valores: volumen negociado, emisores activos, tasas de renta fija y movimientos de renta variable.</p>
-        <div class="flex justify-between items-center"><span class="text-xs text-gray-txt">Publicación: cada viernes</span><a href="#" class="btn btn-primary btn-sm">Suscribir</a></div>
+    <div class="grid lg:grid-cols-2 gap-16 items-center">
+      <div class="animate-fade-up">
+        <div class="section-tag">El servicio</div>
+        <h2 class="section-title mt-2">Información clara y oportuna para invertir con criterio</h2>
+        <p class="text-gray-txt leading-relaxed mt-4">En Valores Casa de Bolsa creemos que las mejores decisiones de inversión se toman con información confiable, actualizada y bien interpretada. Por eso elaboramos reportes financieros y de mercado que traducen la complejidad del mercado de capitales en insights claros y accionables para nuestros clientes.</p>
       </div>
-      <div class="card p-6 animate-fade-up animate-delay-2">
-        <div class="flex items-center gap-3 mb-4"><div class="w-10 h-10 rounded-lg bg-celeste-soft flex items-center justify-center text-xl"><i class="fa-solid fa-chart-line text-blue-inst"></i></div><div class="font-bold text-blue-inst">Monitor Macro Paraguay</div></div>
-        <p class="text-sm text-gray-txt mb-4">Análisis mensual de las principales variables macroeconómicas del Paraguay: PIB, inflación, tipo de cambio, tasas de interés y perspectivas del BCP.</p>
-        <div class="flex justify-between items-center"><span class="text-xs text-gray-txt">Publicación: mensual</span><a href="#" class="btn btn-primary btn-sm">Suscribir</a></div>
-      </div>
-      <div class="card p-6 animate-fade-up animate-delay-3">
-        <div class="flex items-center gap-3 mb-4"><div class="w-10 h-10 rounded-lg bg-celeste-soft flex items-center justify-center text-xl"><i class="fa-solid fa-magnifying-glass-chart text-blue-inst"></i></div><div class="font-bold text-blue-inst">Análisis de Emisores</div></div>
-        <p class="text-sm text-gray-txt mb-4">Informes especiales sobre nuevas emisiones en el mercado: ficha técnica del instrumento, calificación crediticia, análisis del emisor y recomendación.</p>
-        <div class="flex justify-between items-center"><span class="text-xs text-gray-txt">Publicación: por emisión</span><a href="#" class="btn btn-primary btn-sm">Suscribir</a></div>
-      </div>
-      <div class="card p-6 animate-fade-up animate-delay-1">
-        <div class="flex items-center gap-3 mb-4"><div class="w-10 h-10 rounded-lg bg-celeste-soft flex items-center justify-center text-xl"><i class="fa-solid fa-star text-blue-inst"></i></div><div class="font-bold text-blue-inst">Oportunidades Destacadas</div></div>
-        <p class="text-sm text-gray-txt mb-4">Boletín de oportunidades de inversión identificadas por nuestros analistas: instrumentos con relación riesgo/retorno destacada disponibles en el mercado.</p>
-        <div class="flex justify-between items-center"><span class="text-xs text-gray-txt">Publicación: quincenal</span><a href="#" class="btn btn-primary btn-sm">Suscribir</a></div>
-      </div>
-      <div class="card p-6 animate-fade-up animate-delay-2">
-        <div class="flex items-center gap-3 mb-4"><div class="w-10 h-10 rounded-lg bg-celeste-soft flex items-center justify-center text-xl"><i class="fa-solid fa-globe text-blue-inst"></i></div><div class="font-bold text-blue-inst">Perspectivas Internacionales</div></div>
-        <p class="text-sm text-gray-txt mb-4">Análisis mensual de los mercados globales: Fed, BCE, commodities, mercados emergentes y cómo impactan en las estrategias de inversión desde Paraguay.</p>
-        <div class="flex justify-between items-center"><span class="text-xs text-gray-txt">Publicación: mensual</span><a href="#" class="btn btn-primary btn-sm">Suscribir</a></div>
-      </div>
-      <div class="card p-6 animate-fade-up animate-delay-3 bg-blue-inst text-white border-0">
-        <div class="text-3xl mb-4"><i class="fa-solid fa-envelope-open-text text-white"></i></div>
-        <h4 class="font-bold text-white text-lg mb-2">¿Quieres todos nuestros reportes?</h4>
-        <p class="text-white/70 text-sm mb-4">Suscribite al paquete completo de publicaciones y nunca más te pierdas una oportunidad de mercado.</p>
-        <form class="newsletter-form flex flex-col gap-2">
-          <input type="email" placeholder="Tu email" class="form-input text-dark"/>
-          <button type="submit" class="btn btn-white w-full">Suscribirme a todo →</button>
-        </form>
-        <div class="nl-success text-xs text-naranja mt-2 font-semibold" style="display:none">✓ ¡Suscripto!</div>
+      <div class="animate-fade-up animate-delay-2 grid grid-cols-2 gap-4">
+        <div class="bg-blue-inst rounded-2xl p-6 text-white text-center"><div class="text-3xl font-bold text-naranja">33+</div><div class="text-sm mt-1 text-white/80">Años analizando el mercado</div></div>
+        <div class="card p-6 text-center"><div class="text-3xl font-bold text-blue-inst"><i class="fa-solid fa-chart-line"></i></div><div class="text-sm mt-1 text-gray-txt">Análisis accionable</div></div>
+        <div class="card p-6 text-center"><div class="text-3xl font-bold text-blue-inst">SIV</div><div class="text-sm mt-1 text-gray-txt">Equipo regulado</div></div>
+        <div class="bg-celeste-soft rounded-2xl p-6 text-center border border-celeste/20"><div class="text-3xl font-bold text-blue-fin"><i class="fa-solid fa-rotate"></i></div><div class="text-sm mt-1 text-blue-fin">Actualización periódica</div></div>
       </div>
     </div>
   </div>
@@ -47,25 +19,42 @@
 
 <section class="section bg-gray">
   <div class="container">
-    <div class="text-center mb-8 animate-fade-up">
-      <div class="section-tag mx-auto justify-center">Últimas publicaciones</div>
-      <h2 class="section-title mt-2">Reportes recientes</h2>
+    <div class="text-center mb-10 animate-fade-up">
+      <div class="section-tag mx-auto justify-center">Contenido</div>
+      <h2 class="section-title mt-2">Nuestros reportes incluyen</h2>
     </div>
-    <div class="space-y-4 max-w-3xl mx-auto">
-      <div class="card p-5 flex items-center gap-5 animate-fade-up animate-delay-1">
-        <div class="w-12 h-12 rounded-xl bg-celeste-soft flex items-center justify-center text-xl flex-shrink-0"><i class="fa-solid fa-newspaper text-blue-inst"></i></div>
-        <div class="flex-1"><div class="font-bold text-blue-inst text-sm">Boletín Semanal BVA — Semana del 24 al 28 de marzo 2025</div><div class="text-xs text-gray-txt mt-1">Volumen total: G. 38.400 M | Renta fija dominante | Tasas USD estables</div></div>
-        <div class="flex flex-col items-end gap-2 flex-shrink-0"><span class="text-xs text-gray-txt">28 Mar 2025</span><a href="#" class="btn btn-secondary btn-sm">Ver →</a></div>
+    <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+      <div class="card p-6 animate-fade-up animate-delay-1 border-t-4 border-celeste"><div class="text-2xl mb-3"><i class="fa-solid fa-globe text-blue-inst"></i></div><h4 class="font-bold text-blue-inst mb-2">Análisis de mercado</h4><p class="text-sm text-gray-txt">Lectura del contexto económico y financiero, local e internacional, y su impacto en las decisiones de inversión.</p></div>
+      <div class="card p-6 animate-fade-up animate-delay-2 border-t-4 border-celeste"><div class="text-2xl mb-3"><i class="fa-solid fa-file-invoice-dollar text-blue-inst"></i></div><h4 class="font-bold text-blue-inst mb-2">Seguimiento de emisiones</h4><p class="text-sm text-gray-txt">Monitoreo de nuevas emisiones de bonos y acciones, condiciones y oportunidades destacadas.</p></div>
+      <div class="card p-6 animate-fade-up animate-delay-3 border-t-4 border-celeste"><div class="text-2xl mb-3"><i class="fa-solid fa-percent text-blue-inst"></i></div><h4 class="font-bold text-blue-inst mb-2">Tasas e indicadores</h4><p class="text-sm text-gray-txt">Evolución de tasas de interés, tipo de cambio, inflación y otros indicadores clave del mercado paraguayo e internacional.</p></div>
+      <div class="card p-6 animate-fade-up animate-delay-1 border-t-4 border-celeste"><div class="text-2xl mb-3"><i class="fa-solid fa-magnifying-glass-chart text-blue-inst"></i></div><h4 class="font-bold text-blue-inst mb-2">Seguimiento de instrumentos</h4><p class="text-sm text-gray-txt">Desempeño y perspectivas de bonos, CDAs, acciones y otros productos disponibles.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="grid lg:grid-cols-2 gap-16">
+      <div class="animate-fade-up">
+        <div class="section-tag">Beneficios</div>
+        <h2 class="section-title mt-2">¿Por qué contar con nuestros reportes?</h2>
+        <ul class="mt-6 space-y-4">
+          <li class="flex items-start gap-3 text-gray-txt"><i class="fa-solid fa-check text-celeste mt-1"></i><span>Información respaldada por más de 33 años de experiencia analizando el mercado de capitales paraguayo.</span></li>
+          <li class="flex items-start gap-3 text-gray-txt"><i class="fa-solid fa-check text-celeste mt-1"></i><span>Análisis pensado para facilitar decisiones, no solo para informar.</span></li>
+          <li class="flex items-start gap-3 text-gray-txt"><i class="fa-solid fa-check text-celeste mt-1"></i><span>Actualización periódica que te permite anticiparte a cambios y oportunidades del mercado.</span></li>
+          <li class="flex items-start gap-3 text-gray-txt"><i class="fa-solid fa-check text-celeste mt-1"></i><span>Lenguaje claro y accesible, sin perder el rigor técnico que exige cada decisión de inversión.</span></li>
+          <li class="flex items-start gap-3 text-gray-txt"><i class="fa-solid fa-check text-celeste mt-1"></i><span>Respaldo de un equipo regulado por la Superintendencia de Valores (SIV), con criterio profesional y objetivo.</span></li>
+        </ul>
       </div>
-      <div class="card p-5 flex items-center gap-5 animate-fade-up animate-delay-2">
-        <div class="w-12 h-12 rounded-xl bg-celeste-soft flex items-center justify-center text-xl flex-shrink-0"><i class="fa-solid fa-chart-line text-blue-inst"></i></div>
-        <div class="flex-1"><div class="font-bold text-blue-inst text-sm">Monitor Macro Paraguay — Marzo 2025</div><div class="text-xs text-gray-txt mt-1">PIB proyectado +4.1% | Inflación 3.8% | BCP mantiene tasa de política</div></div>
-        <div class="flex flex-col items-end gap-2 flex-shrink-0"><span class="text-xs text-gray-txt">20 Mar 2025</span><a href="#" class="btn btn-secondary btn-sm">Ver →</a></div>
-      </div>
-      <div class="card p-5 flex items-center gap-5 animate-fade-up animate-delay-3">
-        <div class="w-12 h-12 rounded-xl bg-celeste-soft flex items-center justify-center text-xl flex-shrink-0"><i class="fa-solid fa-star text-blue-inst"></i></div>
-        <div class="flex-1"><div class="font-bold text-blue-inst text-sm">Oportunidades Destacadas — 1ª quincena marzo 2025</div><div class="text-xs text-gray-txt mt-1">Bono Regional 8.5% USD | CDA El Comercio 7.0% USD | Análisis de riesgo</div></div>
-        <div class="flex flex-col items-end gap-2 flex-shrink-0"><span class="text-xs text-gray-txt">15 Mar 2025</span><a href="#" class="btn btn-secondary btn-sm">Ver →</a></div>
+      <div class="animate-fade-up animate-delay-2">
+        <div class="card p-8 h-full flex flex-col">
+          <div class="section-tag">¿Para quién es este servicio?</div>
+          <p class="text-gray-txt leading-relaxed mt-4">Inversionistas, empresas, asset managers e instituciones que buscan tomar decisiones informadas sobre el mercado de capitales, con el respaldo de análisis profesional y actualizado.</p>
+          <div class="bg-celeste-soft rounded-2xl p-6 mt-6 mt-auto">
+            <p class="font-bold text-blue-inst">¿Querés recibir nuestros reportes de mercado o conocer más sobre nuestras últimas emisiones y oportunidades?</p>
+            <a href="<?= e(url('contacto')) ?>" class="btn btn-primary mt-4">Solicitar información →</a>
+          </div>
+        </div>
       </div>
     </div>
   </div>
