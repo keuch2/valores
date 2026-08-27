@@ -62,11 +62,11 @@ $na = fn(string $k) => $act === $k ? ' active' : '';
       <div class="nav-item">
         <button class="nav-link">Invertí <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg></button>
         <div class="dropdown-menu mega">
-          <a href="<?= e(url('oportunidades?tipo=bono')) ?>" class="dropdown-item"><div><strong>Bonos</strong><small>Deuda corporativa y municipal</small></div></a>
-          <a href="<?= e(url('oportunidades?tipo=cda')) ?>" class="dropdown-item"><div><strong>CDAs</strong><small>Certificados de depósito</small></div></a>
-          <a href="<?= e(url('oportunidades?tipo=accion')) ?>" class="dropdown-item"><div><strong>Acciones</strong><small>Participación en empresas</small></div></a>
-          <a href="<?= e(url('oportunidades?tipo=inter')) ?>" class="dropdown-item"><div><strong>Mercado Internacional</strong><small>Exposición global con INVIU</small></div></a>
-          <a href="<?= e(url('oportunidades')) ?>" class="dropdown-item"><div><strong>Oportunidades</strong><small>Tablero de inversión</small></div></a>
+          <a href="<?= e(url('oportunidades')) ?>" class="dropdown-item"><div><strong>Bonos</strong><small>Deuda corporativa y municipal</small></div></a>
+          <a href="<?= e(url('oportunidades')) ?>" class="dropdown-item"><div><strong>CDAs</strong><small>Certificados de depósito</small></div></a>
+          <a href="<?= e(url('oportunidades')) ?>" class="dropdown-item"><div><strong>Acciones</strong><small>Participación en empresas</small></div></a>
+          <a href="<?= e(url('oportunidades')) ?>" class="dropdown-item"><div><strong>Mercado Internacional</strong><small>Exposición global con INVIU</small></div></a>
+          <a href="<?= e(url('oportunidades')) ?>" class="dropdown-item"><div><strong>Oportunidades</strong><small>Reporte diario en PDF</small></div></a>
         </div>
       </div>
 
@@ -120,9 +120,9 @@ $na = fn(string $k) => $act === $k ? ' active' : '';
     <div>
       <button class="mobile-dropdown-toggle">Invertí <svg class="w-4 h-4 m-chevron" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg></button>
       <div class="mobile-dropdown-content">
-        <a href="<?= e(url('oportunidades?tipo=bono')) ?>">Bonos</a>
-        <a href="<?= e(url('oportunidades?tipo=cda')) ?>">CDAs</a>
-        <a href="<?= e(url('oportunidades?tipo=accion')) ?>">Acciones</a>
+        <a href="<?= e(url('oportunidades')) ?>">Bonos</a>
+        <a href="<?= e(url('oportunidades')) ?>">CDAs</a>
+        <a href="<?= e(url('oportunidades')) ?>">Acciones</a>
         <a href="<?= e(url('oportunidades')) ?>">Oportunidades</a>
       </div>
     </div>

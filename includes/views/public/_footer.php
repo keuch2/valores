@@ -40,9 +40,9 @@ $waNum = preg_replace('/[^0-9]/', '', $sitio['contacto_whatsapp']);
       <div>
         <h4>Invertí</h4>
         <ul>
-          <li><a href="<?= e(url('oportunidades?tipo=bono')) ?>">Bonos</a></li>
-          <li><a href="<?= e(url('oportunidades?tipo=cda')) ?>">CDAs</a></li>
-          <li><a href="<?= e(url('oportunidades?tipo=accion')) ?>">Acciones</a></li>
+          <li><a href="<?= e(url('oportunidades')) ?>">Bonos</a></li>
+          <li><a href="<?= e(url('oportunidades')) ?>">CDAs</a></li>
+          <li><a href="<?= e(url('oportunidades')) ?>">Acciones</a></li>
           <li><a href="<?= e(url('oportunidades')) ?>">Oportunidades</a></li>
           <li><a href="<?= e(url('glosario')) ?>">Glosario</a></li>
         </ul>

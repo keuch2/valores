@@ -1,38 +1,25 @@
-<?php /** Oportunidades dinámicas. Recibe $oportunidades, $tipoActivo. */ ?>
+<?php /** Oportunidades de inversión: texto + descarga del reporte diario. Recibe $pdf (fila media o null). */ ?>
 <section class="hero-inner">
   <div class="container relative z-10">
-    <div class="breadcrumb"><a href="<?= e(url('')) ?>">Inicio</a> <span>/</span> <a href="<?= e(url('oportunidades')) ?>">Invierte</a> <span>/</span> <span class="text-white/80">Oportunidades</span></div>
-    <h1>Tablero de Oportunidades</h1>
-    <p>Instrumentos activos en el Mercado de Valores paraguayo disponibles para inversión. Filtrá por tipo, moneda o calificación y encontrá la opción ideal para tu perfil.</p>
+    <div class="breadcrumb"><a href="<?= e(url('')) ?>">Inicio</a> <span>/</span> <span class="text-white/80">Oportunidades</span></div>
+    <h1>Oportunidades de Inversión</h1>
+    <p>¿Querés que tu dinero trabaje mejor? Descubrí las oportunidades del mercado, actualizadas hoy.</p>
   </div>
 </section>
+
 <section class="section">
-  <div class="container">
-    <!-- Filtros -->
-    <div class="filter-bar mb-6 flex flex-wrap gap-2">
-      <?php
-      $filtros = ['' => 'Todas', 'bono' => 'Bonos', 'cda' => 'CDAs', 'accion' => 'Acciones', 'inter' => 'Internacional'];
-      foreach ($filtros as $f => $lbl):
-        $activo = ((string) ($tipoActivo ?? '')) === $f ? ' active' : '';
-        $href = $f === '' ? url('oportunidades') : url('oportunidades?tipo=' . $f);
-      ?>
-        <a href="<?= e($href) ?>" class="filter-btn<?= $activo ?>"><?= e($lbl) ?></a>
-      <?php endforeach; ?>
-    </div>
-
-    <?php if (empty($oportunidades)): ?>
-      <div class="card text-center p-10"><p class="text-gray-txt">No hay oportunidades disponibles en esta categoría por el momento.</p></div>
-    <?php else: ?>
-      <?php require APP_ROOT . '/includes/views/public/_tabla_oportunidades.php'; ?>
-    <?php endif; ?>
-
-    <div class="mt-8 p-5 bg-yellow-50 rounded-xl border border-yellow-200 text-left">
-      <div class="flex gap-3">
-        <span class="text-xl flex-shrink-0">ℹ️</span>
-        <div class="text-sm text-yellow-800">
-          <strong>Información orientativa.</strong> Las tasas, condiciones y disponibilidad pueden variar. Para condiciones exactas y actuales, consultá con un asesor de Valores.
+  <div class="container" style="max-width:760px">
+    <div class="card p-10 text-center animate-fade-up">
+      <p class="text-gray-txt leading-relaxed">El mercado de capitales cambia todos los días, y con él, las oportunidades para hacer crecer tu patrimonio. En Valores Casa de Bolsa seleccionamos y actualizamos diariamente las alternativas de inversión disponibles —bonos, CDAs y otros instrumentos— para que cuentes con información clara, precisa y oportuna al momento de decidir.</p>
+      <p class="text-gray-txt leading-relaxed mt-4">Descargá el reporte de oportunidades de hoy y descubrí qué alternativas tenemos disponibles para vos.</p>
+      <?php if ($pdf): ?>
+        <div class="mt-8">
+          <a href="<?= e(Media::urlPublica($pdf)) ?>" target="_blank" rel="noopener" class="btn btn-primary btn-lg"><i class="fa-solid fa-file-pdf"></i>&nbsp; Descargar oportunidades de hoy</a>
         </div>
-      </div>
+        <p class="text-xs text-gray-txt mt-4">Actualizado el <?= e(date('d/m/Y', strtotime((string) $pdf['created_at']))) ?></p>
+      <?php else: ?>
+        <p class="text-sm text-gray-txt mt-8">El reporte de hoy estará disponible en breve. Mientras tanto, <a href="<?= e(url('contacto')) ?>" class="text-celeste font-semibold hover:underline">consultá con un asesor</a>.</p>
+      <?php endif; ?>
     </div>
   </div>
 </section>

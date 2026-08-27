@@ -1,4 +1,4 @@
-<?php /** Home. Recibe $servicios, $oportunidades, $tasas. */ ?>
+<?php /** Home. Recibe $servicios, $tasas. */ ?>
 <section class="hero-main">
   <div class="container relative z-10 py-24 lg:py-32">
     <div class="max-w-2xl">
@@ -161,20 +161,6 @@
     </div>
   </div>
 </section>
-
-<!-- Oportunidades destacadas (dinámico) -->
-<?php $destacadas = array_slice($oportunidades, 0, 4); if ($destacadas): ?>
-<section class="section">
-  <div class="container">
-    <div class="text-center mb-10">
-      <div class="section-tag">Tablero</div>
-      <h2 class="section-title mt-2">Oportunidades de inversión</h2>
-    </div>
-    <?php require APP_ROOT . '/includes/views/public/_tabla_oportunidades.php'; ?>
-    <div class="text-center mt-6"><a href="<?= e(url('oportunidades')) ?>" class="btn btn-secondary">Ver todas →</a></div>
-  </div>
-</section>
-<?php endif; ?>
 
 <!-- Las tasas del simulador vienen de la BD (config) -->
 <script>window.SIM_TASAS = <?= json_encode($tasas) ?>;</script>

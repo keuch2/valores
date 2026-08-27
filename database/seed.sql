@@ -52,7 +52,8 @@ INSERT INTO configuracion (clave, valor, grupo) VALUES
   ('apertura_firma_formatos',  'jpg,jpeg,png', 'apertura'),
   ('apertura_email_agente_asunto', 'Nueva solicitud de apertura de cuenta', 'apertura'),
   ('apertura_email_cliente_asunto', 'Recibimos tu solicitud — Valores Casa de Bolsa', 'apertura'),
-  ('apertura_whatsapp', '+595 994 100 003', 'apertura');
+  ('apertura_whatsapp', '+595 994 100 003', 'apertura'),
+  ('oportunidades_pdf_id', '', 'oportunidades');
 
 -- ----------------------------------------------------------------------------
 --  Servicios (8 según revisión editorial del cliente, ago-2026)

@@ -68,9 +68,8 @@ function publica_404(): void
 switch ($pagina) {
     case '':
         vista_publica('home', [
-            'servicios'     => Publico::servicios(),
-            'oportunidades' => Publico::oportunidades(),
-            'tasas'         => Publico::tasasSimulador(),
+            'servicios' => Publico::servicios(),
+            'tasas'     => Publico::tasasSimulador(),
         ], ['title' => 'Valores Casa de Bolsa — Inversiones con trayectoria', 'activo' => 'inicio']);
         break;
 
@@ -85,10 +84,11 @@ switch ($pagina) {
         break;
 
     case 'oportunidades':
-        $tipo = get('tipo') ?: null;
+        // El tablero quedó desactivado: la página ofrece el reporte diario en PDF
+        // que se sube desde el admin (config `oportunidades_pdf_id`).
+        $pdfId = (int) Config::get('oportunidades_pdf_id', '0');
         vista_publica('oportunidades', [
-            'oportunidades' => Publico::oportunidades($tipo),
-            'tipoActivo'    => $tipo,
+            'pdf' => $pdfId > 0 ? Media::buscar($pdfId) : null,
         ], ['title' => 'Oportunidades de inversión — Valores', 'activo' => 'invierte']);
         break;
 
