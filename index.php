@@ -108,6 +108,11 @@ switch ($pagina) {
         ]);
         break;
 
+    case 'trabaja-con-nosotros':
+        require APP_ROOT . '/includes/controllers/public/trabaja.php';
+        if ($sub === 'enviar') { trabaja_enviar(); } else { trabaja_form(); }
+        break;
+
     case 'glosario':
         vista_publica('glosario', ['terminos' => Publico::glosario()], ['title' => 'Glosario financiero — Valores', 'activo' => 'invierte']);
         break;

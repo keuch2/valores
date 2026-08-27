@@ -53,7 +53,8 @@ INSERT INTO configuracion (clave, valor, grupo) VALUES
   ('apertura_email_agente_asunto', 'Nueva solicitud de apertura de cuenta', 'apertura'),
   ('apertura_email_cliente_asunto', 'Recibimos tu solicitud — Valores Casa de Bolsa', 'apertura'),
   ('apertura_whatsapp', '+595 994 100 003', 'apertura'),
-  ('oportunidades_pdf_id', '', 'oportunidades');
+  ('oportunidades_pdf_id', '', 'oportunidades'),
+  ('trabaja_email', 'administracion@valores.com.py', 'contacto');
 
 -- ----------------------------------------------------------------------------
 --  Servicios (8 según revisión editorial del cliente, ago-2026)

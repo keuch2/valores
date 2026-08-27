@@ -14,6 +14,7 @@ function config_grupos(): array
             'contacto_whatsapp' => 'WhatsApp',
             'contacto_email' => 'Email',
             'contacto_direccion' => 'Dirección / oficina',
+            'trabaja_email' => 'Email para postulaciones (Trabajá con Nosotros)',
         ]],
         'redes' => ['titulo' => 'Redes sociales', 'campos' => [
             'red_linkedin' => 'LinkedIn', 'red_facebook' => 'Facebook',
