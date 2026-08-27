@@ -65,10 +65,12 @@ c_ok "Código actualizado a $(git rev-parse --short HEAD)."
 # --- 3. Verificar sintaxis PHP (falla el deploy si algo no compila) ---
 c_info "==> Verificando sintaxis PHP con $PHP_BIN…"
 ERR=0
+# -n: sin php.ini. El lint no necesita extensiones y así no dependemos de que
+# el CLI del server (php.d) esté sano — en ago-2026 una extensión hacía segfault.
 while IFS= read -r -d '' f; do
-  if ! "$PHP_BIN" -l "$f" >/dev/null 2>&1; then
+  if ! "$PHP_BIN" -n -l "$f" >/dev/null 2>&1; then
     c_err "  Error de sintaxis: $f"
-    "$PHP_BIN" -l "$f" || true
+    "$PHP_BIN" -n -l "$f" || true
     ERR=1
   fi
 done < <(find . -path ./.git -prune -o -name '*.php' -print0)
