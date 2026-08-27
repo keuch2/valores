@@ -8,14 +8,14 @@ $waNum = preg_replace('/[^0-9]/', '', $sitio['contacto_whatsapp']);
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 mb-8">
 
       <div class="lg:col-span-2">
-        <div class="footer-logo">VALORES<span>CASA DE BOLSA</span></div>
+        <a href="<?= e(url('')) ?>" class="footer-logo inline-block"><img src="<?= e(url('assets/img/logo.png')) ?>" alt="Valores Casa de Bolsa" class="h-9 w-auto"></a>
         <p class="footer-tagline">Tu dinero trabajando con quienes más saben del mercado de capitales paraguayo.</p>
         <div class="social-links">
-          <a href="<?= e($sitio['redes']['linkedin'] ?: '#') ?>" class="social-link" title="LinkedIn">in</a>
-          <a href="<?= e($sitio['redes']['facebook'] ?: '#') ?>" class="social-link" title="Facebook">f</a>
-          <a href="<?= e($sitio['redes']['twitter'] ?: '#') ?>" class="social-link" title="Twitter">𝕏</a>
-          <a href="<?= e($sitio['redes']['instagram'] ?: '#') ?>" class="social-link" title="Instagram">ig</a>
-          <a href="<?= e($sitio['redes']['youtube'] ?: '#') ?>" class="social-link" title="YouTube"></a>
+          <a href="<?= e($sitio['redes']['linkedin'] ?: '#') ?>" class="social-link" title="LinkedIn" aria-label="LinkedIn" target="_blank" rel="noopener"><i class="fa-brands fa-linkedin-in"></i></a>
+          <a href="<?= e($sitio['redes']['facebook'] ?: '#') ?>" class="social-link" title="Facebook" aria-label="Facebook" target="_blank" rel="noopener"><i class="fa-brands fa-facebook-f"></i></a>
+          <a href="<?= e($sitio['redes']['twitter'] ?: '#') ?>" class="social-link" title="X" aria-label="X (Twitter)" target="_blank" rel="noopener"><i class="fa-brands fa-x-twitter"></i></a>
+          <a href="<?= e($sitio['redes']['instagram'] ?: '#') ?>" class="social-link" title="Instagram" aria-label="Instagram" target="_blank" rel="noopener"><i class="fa-brands fa-instagram"></i></a>
+          <a href="<?= e($sitio['redes']['youtube'] ?: '#') ?>" class="social-link" title="YouTube" aria-label="YouTube" target="_blank" rel="noopener"><i class="fa-brands fa-youtube"></i></a>
         </div>
         <div class="newsletter-strip mt-6">
           <p class="text-white/70 text-xs mb-2 font-semibold">Boletín de oportunidades</p>
