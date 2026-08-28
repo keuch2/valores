@@ -221,5 +221,6 @@ function apertura_etiquetas(string $tipo): array
         'telefono'        => 'Teléfono',
         'email'           => 'Correo electrónico',
         'ciudad_pais'     => 'Ciudad / País',
+        'rango_inversion' => 'Rango a invertir',
     ] + $map;
 }

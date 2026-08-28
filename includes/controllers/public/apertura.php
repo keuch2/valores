@@ -22,6 +22,18 @@ function apertura_tipos(): array
     return ['fisica' => 'Persona Física', 'conjunta' => 'Cuenta Conjunta', 'juridica' => 'Persona Jurídica'];
 }
 
+/** Rangos de inversión (clave => etiqueta). */
+function apertura_rangos(): array
+{
+    return [
+        'r1'   => 'Entre Gs. 10 millones y Gs. 100 millones',
+        'r2'   => 'Entre Gs. 100 millones y Gs. 500 millones',
+        'r3'   => 'Entre Gs. 500 millones y Gs. 5.000 millones',
+        'r4'   => 'Más de Gs. 5.000 millones (aprox. USD 700.000)',
+        'otro' => 'Otro',
+    ];
+}
+
 /** Muestra el formulario de apertura. */
 function apertura_wizard(): void
 {
@@ -60,6 +72,8 @@ function apertura_enviar(): void
     $telefono   = mb_substr(post('telefono'), 0, 50);
     $email      = mb_substr(post('email'), 0, 190);
     $ciudadPais = mb_substr(post('ciudad_pais'), 0, 120);
+    $rango      = post('rango_inversion');
+    $rangos     = apertura_rangos();
 
     $viejos = [
         'tipo_persona'    => $tipo,
@@ -67,6 +81,7 @@ function apertura_enviar(): void
         'telefono'        => $telefono,
         'email'           => $email,
         'ciudad_pais'     => $ciudadPais,
+        'rango_inversion' => $rango,
     ];
 
     if (!isset($tipos[$tipo])) {
@@ -78,6 +93,10 @@ function apertura_enviar(): void
     if (email_valido($email) === null) {
         apertura_reintentar('Ingresá un correo electrónico válido.', $viejos);
     }
+    if (!isset($rangos[$rango])) {
+        apertura_reintentar('Indicá el rango aproximado que estás considerando invertir.', $viejos);
+    }
+    $rangoLbl = $rangos[$rango];
 
     $datos = [
         'tipo_persona'    => $tipo,
@@ -85,6 +104,7 @@ function apertura_enviar(): void
         'telefono'        => $telefono,
         'email'           => $email,
         'ciudad_pais'     => $ciudadPais,
+        'rango_inversion' => $rangoLbl,
     ];
     $ref = ['nombre' => $nombre, 'documento' => '', 'email' => $email, 'telefono' => $telefono];
 
@@ -95,7 +115,7 @@ function apertura_enviar(): void
 
     // Emails (no bloquear la confirmación si fallan).
     require_once APP_ROOT . '/includes/core/mailer.php';
-    apertura_notificar((int) $r['id'], $tipo, $ref, $r['agente'] ?? null, $ciudadPais);
+    apertura_notificar((int) $r['id'], $tipo, $ref, $r['agente'] ?? null, $ciudadPais, $rangoLbl);
 
     // Enlace a WhatsApp con el resumen de la solicitud.
     $numRaw = (string) (Config::get('apertura_whatsapp', '') ?: Config::get('contacto_whatsapp', ''));
@@ -108,6 +128,7 @@ function apertura_enviar(): void
             . "Teléfono: {$telefono}\n"
             . "Email: {$email}\n"
             . "Ciudad / País: {$ciudadPais}\n"
+            . "Rango a invertir: {$rangoLbl}\n"
             . "Solicitud N° {$r['id']}";
         $waUrl = 'https://wa.me/' . $num . '?text=' . rawurlencode($msj);
     }
@@ -120,7 +141,7 @@ function apertura_enviar(): void
 }
 
 /** Envía los correos al agente asignado y (opcional) al cliente. */
-function apertura_notificar(int $id, string $tipo, array $ref, ?array $agente, string $ciudadPais = ''): void
+function apertura_notificar(int $id, string $tipo, array $ref, ?array $agente, string $ciudadPais = '', string $rango = ''): void
 {
     $panelUrl = (isset($_SERVER['HTTP_HOST']) ? 'https://' . $_SERVER['HTTP_HOST'] : '')
         . url('admin/?r=solicitudes/ver&id=' . $id);
@@ -133,6 +154,7 @@ function apertura_notificar(int $id, string $tipo, array $ref, ?array $agente, s
             . "Referencia: {$ref['nombre']}\n"
             . "Contacto: {$ref['email']} / {$ref['telefono']}\n"
             . ($ciudadPais !== '' ? "Ciudad / País: {$ciudadPais}\n" : '')
+            . ($rango !== '' ? "Rango a invertir: {$rango}\n" : '')
             . "\nVer el detalle completo en el panel:\n{$panelUrl}\n";
         mailer_enviar($agente['email'], $asunto, $cuerpo);
     }

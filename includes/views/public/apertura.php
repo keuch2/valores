@@ -66,6 +66,18 @@ $tipoSel = (string) ($viejos['tipo_persona'] ?? '');
             <input type="text" name="ciudad_pais" class="form-input" required maxlength="120" placeholder="Asunción, Paraguay" value="<?= e((string) ($viejos['ciudad_pais'] ?? '')) ?>"/>
           </div>
         </div>
+        <fieldset class="form-group mt-6">
+          <legend class="form-label">¿Cuál es el rango aproximado que estás considerando invertir? *</legend>
+          <p class="text-xs text-gray-txt mb-3">Esta información nos ayudará a brindarte una orientación más personalizada.</p>
+          <div class="space-y-2">
+            <?php $rangoSel = (string) ($viejos['rango_inversion'] ?? ''); foreach (apertura_rangos() as $k => $lbl): ?>
+              <label class="flex items-center gap-3 text-sm text-gray-txt cursor-pointer">
+                <input type="radio" name="rango_inversion" value="<?= e($k) ?>" class="w-4 h-4 text-celeste" required <?= $rangoSel === $k ? 'checked' : '' ?>>
+                <span><?= e($lbl) ?></span>
+              </label>
+            <?php endforeach; ?>
+          </div>
+        </fieldset>
         <button type="submit" id="ap-submit" class="btn btn-primary w-full mt-6">Enviar y continuar en WhatsApp →</button>
         <p class="text-xs text-gray-txt text-center mt-3">Al enviar aceptás ser contactado por un asesor de Valores Casa de Bolsa.</p>
       </div>
