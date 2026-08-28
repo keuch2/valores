@@ -30,16 +30,6 @@ $na = fn(string $k) => $act === $k ? ' active' : '';
 </head>
 <body class="font-quicksand">
 
-<div class="topbar py-2">
-  <div class="container flex justify-between items-center">
-    <span class="text-xs hidden md:block" style="color:var(--color-blue-inst);opacity:0.85"><?= e($sitio['contacto_direccion']) ?></span>
-    <div class="flex items-center gap-4 ml-auto">
-      <a href="tel:<?= e(preg_replace('/[^0-9+]/', '', $sitio['contacto_telefono'])) ?>" class="text-xs flex items-center gap-1 transition-colors font-semibold" style="color:var(--color-blue-inst)"><?= e($sitio['contacto_telefono']) ?></a>
-      <a href="#" class="text-xs font-semibold transition-colors" style="color:var(--color-blue-inst)">Mi Cuenta →</a>
-    </div>
-  </div>
-</div>
-
 <nav id="main-navbar" class="navbar">
   <div class="container flex items-center justify-between h-24">
     <a href="<?= e(url('')) ?>" class="navbar-logo">
