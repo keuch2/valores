@@ -72,6 +72,7 @@ $na = fn(string $k) => $act === $k ? ' active' : '';
         <button class="nav-link">Nosotros <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg></button>
         <div class="dropdown-menu">
           <a href="<?= e(url('nosotros')) ?>" class="dropdown-item"><div><strong>Quiénes Somos</strong><small>Historia y trayectoria</small></div></a>
+          <a href="<?= e(url('nosotros#identidad')) ?>" class="dropdown-item"><div><strong>Misión y Visión</strong><small>Nuestra identidad</small></div></a>
           <a href="<?= e(url('nosotros#directiva')) ?>" class="dropdown-item"><div><strong>Plana Directiva</strong><small>Nuestro equipo</small></div></a>
         </div>
       </div>
