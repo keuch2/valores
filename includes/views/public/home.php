@@ -1,6 +1,6 @@
 <?php /** Home. Recibe $servicios, $tasas. */ ?>
 <section class="hero-main">
-  <div class="container relative z-10 py-24 lg:py-32">
+  <div class="container relative z-10 py-12 lg:py-16">
     <div class="max-w-2xl">
       <div class="hero-eyebrow animate-fade-up">
         <span></span> Más de 30 años construyendo el mercado de capitales paraguayo

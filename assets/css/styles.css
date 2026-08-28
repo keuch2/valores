@@ -496,7 +496,7 @@ ul { list-style: none; }
    HERO SECTIONS
    ============================================================ */
 .hero-main {
-  min-height: 88vh;
+  min-height: 64vh;   /* antes 88vh: menos aire entre el header y el texto */
   background: linear-gradient(135deg, rgba(11,60,93,0.82) 0%, rgba(30,90,138,0.75) 100%), url('../img/hero.jpg') center/cover no-repeat;
   position: relative;
   display: flex;

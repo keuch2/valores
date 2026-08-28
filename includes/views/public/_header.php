@@ -13,7 +13,7 @@ $na = fn(string $k) => $act === $k ? ' active' : '';
   <title><?= e($meta['title']) ?></title>
   <meta name="description" content="<?= e($meta['desc'] ?? '') ?>"/>
   <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="stylesheet" href="<?= e(url('assets/css/styles.css')) ?>?v=20260828"/>
+  <link rel="stylesheet" href="<?= e(url('assets/css/styles.css')) ?>?v=20260828b"/>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" referrerpolicy="no-referrer"/>
   <script>
     tailwind.config = {
