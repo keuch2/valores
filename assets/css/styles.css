@@ -172,7 +172,8 @@ ul { list-style: none; }
   display: none;
   position: fixed;
   top: 0; left: 0; right: 0; bottom: 0;
-  background: var(--color-white);
+  background: var(--color-blue-inst);   /* mismo fondo que el navbar desktop */
+  color: white;
   z-index: 2000;
   overflow-y: auto;
   padding: 1.5rem;
@@ -186,12 +187,12 @@ ul { list-style: none; }
   padding: 0.875rem 1rem;
   font-weight: 600;
   font-size: 1rem;
-  color: var(--color-dark);
-  border-bottom: 1px solid var(--color-gray-ui);
+  color: white;
+  border-bottom: 1px solid rgba(255,255,255,0.12);
   transition: var(--transition);
 }
 
-.mobile-nav-link:hover { color: var(--color-celeste); padding-left: 1.5rem; }
+.mobile-nav-link:hover { color: var(--color-naranja); padding-left: 1.5rem; }
 
 .mobile-dropdown-toggle {
   width: 100%;
@@ -201,15 +202,16 @@ ul { list-style: none; }
   padding: 0.875rem 1rem;
   font-weight: 600;
   font-size: 1rem;
-  color: var(--color-dark);
-  border-bottom: 1px solid var(--color-gray-ui);
+  color: white;
+  border-bottom: 1px solid rgba(255,255,255,0.12);
   cursor: pointer;
 }
 
 .mobile-dropdown-content {
   display: none;
   padding: 0.5rem 0 0.5rem 1.5rem;
-  background: var(--color-gray-bg);
+  background: rgba(255,255,255,0.06);
+  border-radius: 8px;
 }
 
 .mobile-dropdown-content.open { display: block; }
@@ -218,12 +220,14 @@ ul { list-style: none; }
   display: block;
   padding: 0.5rem 0.75rem;
   font-size: 0.9rem;
-  color: var(--color-gray-text);
+  color: rgba(255,255,255,0.8);
   font-weight: 500;
   transition: var(--transition);
 }
 
-.mobile-dropdown-content a:hover { color: var(--color-blue-fin); }
+.mobile-dropdown-content a:hover { color: var(--color-naranja); }
+#mobile-menu-close { color: white; }
+#mobile-menu-close:hover { background: rgba(255,255,255,0.1) !important; }
 
 /* ============================================================
    BUTTONS
