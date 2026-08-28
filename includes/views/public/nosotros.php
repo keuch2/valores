@@ -23,7 +23,7 @@
   <div class="container">
     <div class="text-center mb-10 animate-fade-up">
       <div class="section-tag mx-auto justify-center">Identidad</div>
-      <h2 class="section-title mt-2">Misión, Visión y Valores</h2>
+      <h2 class="section-title mt-2">Misión y Visión</h2>
     </div>
     <div class="grid md:grid-cols-3 gap-6">
       <div class="card p-8 animate-fade-up animate-delay-1 border-t-4 border-celeste">
