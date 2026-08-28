@@ -92,5 +92,5 @@ valores-app/                  webroot del proyecto
 ## Decisiones del cliente
 
 - **Cuenta Conjunta**: se conserva como tercera rama del wizard (además de física/jurídica).
-- **Noticias**: se administra en el CMS pero está **oculta en el front** (flag `visible_front`); las rutas `/noticias` devuelven 404 hasta activarla.
+- **Noticias**: se administra en el CMS y se publica en `/noticias` (listado paginado) y `/noticias/{slug}` (detalle). Solo salen las noticias con estado *publicado* y `visible_front` marcado.
 - **Tasas del simulador**: administrables desde Configuración (antes hardcodeadas en `main.js`).

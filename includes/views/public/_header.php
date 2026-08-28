@@ -83,10 +83,11 @@ $na = fn(string $k) => $act === $k ? ' active' : '';
         <div class="dropdown-menu">
           <a href="<?= e(url('nosotros')) ?>" class="dropdown-item"><div><strong>Quiénes Somos</strong><small>Historia y trayectoria</small></div></a>
           <a href="<?= e(url('nosotros#directiva')) ?>" class="dropdown-item"><div><strong>Plana Directiva</strong><small>Nuestro equipo</small></div></a>
-          <a href="<?= e(url('trabaja-con-nosotros')) ?>" class="dropdown-item"><div><strong>Trabajá con Nosotros</strong><small>Sumate al equipo</small></div></a>
         </div>
       </div>
 
+      <a href="<?= e(url('trabaja-con-nosotros')) ?>" class="nav-link<?= $na('trabaja') ?>">Trabajá con Nosotros</a>
+      <a href="<?= e(url('noticias')) ?>" class="nav-link<?= $na('noticias') ?>">Noticias</a>
       <a href="<?= e(url('contacto')) ?>" class="nav-link<?= $na('contacto') ?>">Contacto</a>
     </div>
 
@@ -129,6 +130,7 @@ $na = fn(string $k) => $act === $k ? ' active' : '';
     </div>
     <a href="<?= e(url('nosotros')) ?>" class="mobile-nav-link">Nosotros</a>
     <a href="<?= e(url('trabaja-con-nosotros')) ?>" class="mobile-nav-link">Trabajá con Nosotros</a>
+    <a href="<?= e(url('noticias')) ?>" class="mobile-nav-link">Noticias</a>
     <a href="<?= e(url('contacto')) ?>" class="mobile-nav-link">Contacto</a>
     <div class="mt-6 flex flex-col gap-3">
       <a href="<?= e(url('apertura-de-cuenta')) ?>" class="btn btn-primary text-center">Abrir mi Cuenta</a>

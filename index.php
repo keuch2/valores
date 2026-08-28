@@ -126,9 +126,25 @@ switch ($pagina) {
         }
         break;
 
-    // Noticias: existe en el CMS pero OCULTA en el front por ahora (decisión del cliente).
     case 'noticias':
-        publica_404();
+        if ($sub) {
+            $n = Publico::noticiaPorSlug($sub);
+            if (!$n) { publica_404(); }
+            vista_publica('noticia-detalle', ['n' => $n], [
+                'title'  => ($n['seo_title'] ?: $n['titulo']) . ' — Valores',
+                'desc'   => (string) ($n['seo_description'] ?: $n['resumen']),
+                'activo' => 'noticias',
+            ]);
+        } else {
+            $porPagina = 9;
+            $total  = Publico::noticiasTotal();
+            $pagina = max(1, min((int) get('p', '1'), max(1, (int) ceil($total / $porPagina))));
+            vista_publica('noticias', [
+                'noticias' => Publico::noticias($porPagina, ($pagina - 1) * $porPagina),
+                'pagina'   => $pagina,
+                'paginas'  => (int) ceil($total / $porPagina),
+            ], ['title' => 'Noticias y Análisis del Mercado — Valores', 'activo' => 'noticias']);
+        }
         break;
 
     default:

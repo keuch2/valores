@@ -23,7 +23,7 @@ function entidades_config(): array
                 ['nombre'=>'imagen_destacada_id','etiqueta'=>'Imagen destacada','tipo'=>'media','media_tipo'=>'imagen'],
                 ['nombre'=>'categoria','etiqueta'=>'Categoría','tipo'=>'select','opciones'=>['mercado'=>'Mercado','macro'=>'Macro','inter'=>'Internacional','empresa'=>'Empresa','regulacion'=>'Regulación']],
                 ['nombre'=>'estado','etiqueta'=>'Estado','tipo'=>'select','opciones'=>['borrador'=>'Borrador','publicado'=>'Publicado']],
-                ['nombre'=>'visible_front','etiqueta'=>'Visible en el sitio público','tipo'=>'checkbox','hint'=>'Noticias está oculto en el front por ahora; dejar desmarcado hasta activar la sección.'],
+                ['nombre'=>'visible_front','etiqueta'=>'Visible en el sitio público','tipo'=>'checkbox','hint'=>'Desmarcá para ocultar esta noticia del sitio sin pasarla a borrador.'],
                 ['nombre'=>'fecha_publicacion','etiqueta'=>'Fecha de publicación','tipo'=>'date'],
                 ['nombre'=>'autor','etiqueta'=>'Autor','tipo'=>'text'],
                 ['nombre'=>'seo_title','etiqueta'=>'SEO title','tipo'=>'text'],

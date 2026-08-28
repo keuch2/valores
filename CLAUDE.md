@@ -88,7 +88,7 @@ La protección de `config.php`, `/includes`, `/database` y `/uploads/solicitudes
 
 - Idioma: **español** en todo (código, comentarios, DB, UI). `declare(strict_types=1);` en cada archivo PHP.
 - Front-end: **Tailwind por CDN** + `assets/css/styles.css` (diseño heredado del sitio estático original; preservarlo). JS vanilla en `assets/js/` (`main.js`, `admin.js`, `apertura.js`). No hay bundler.
-- **Noticias** existe en el CMS pero está **oculta en el front** (flag `visible_front`; `/noticias` devuelve 404). Es una decisión del cliente — no la actives sin pedido explícito.
+- **Noticias** está **activa en el front** desde ago-2026 (pedido del cliente): `/noticias` lista las publicadas con `visible_front = 1` y `/noticias/slug` muestra el detalle. El flag `visible_front` sirve para ocultar una noticia puntual.
 - **Cuenta Conjunta** se conserva como tercera rama del wizard (decisión confirmada del cliente).
 - Persona **Jurídica**: el set de campos en `pasos.php` es **provisional/inferido**; ajustar cuando el cliente entregue su KYC específico.
 - Tablas y columnas usan `snake_case` en español; FKs explícitas; `created_at`/`updated_at` donde aplica.

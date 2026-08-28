@@ -82,7 +82,7 @@ final class Publico
 
     /**
      * Noticias PUBLICADAS y visibles en el front.
-     * Mientras la sección esté oculta, visible_front = 0 => no devuelve nada.
+     * visible_front = 0 permite ocultar una noticia puntual sin despublicarla.
      */
     public static function noticias(int $limite = 20, int $offset = 0): array
     {
@@ -96,6 +96,12 @@ final class Publico
         $stmt->bindValue(':off', $offset, PDO::PARAM_INT);
         $stmt->execute();
         return $stmt->fetchAll();
+    }
+
+    /** Cantidad de noticias publicadas y visibles (para paginar). */
+    public static function noticiasTotal(): int
+    {
+        return (int) db()->query("SELECT COUNT(*) FROM noticias WHERE estado = 'publicado' AND visible_front = 1")->fetchColumn();
     }
 
     public static function noticiaPorSlug(string $slug): ?array

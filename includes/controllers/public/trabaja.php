@@ -13,7 +13,7 @@ function trabaja_form(?string $error = null, array $viejos = [], bool $enviado =
     vista_publica('trabaja', ['error' => $error, 'viejos' => $viejos, 'enviado' => $enviado], [
         'title' => 'Trabajá con Nosotros — Valores',
         'desc'  => 'Sumate al equipo de Valores Casa de Bolsa. Dejanos tus datos y nos ponemos en contacto.',
-        'activo'=> 'nosotros',
+        'activo'=> 'trabaja',
     ]);
 }
 
