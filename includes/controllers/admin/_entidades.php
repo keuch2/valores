@@ -21,7 +21,7 @@ function entidades_config(): array
                 ['nombre'=>'resumen','etiqueta'=>'Resumen','tipo'=>'textarea'],
                 ['nombre'=>'contenido','etiqueta'=>'Contenido','tipo'=>'richtext'],
                 ['nombre'=>'imagen_destacada_id','etiqueta'=>'Imagen destacada','tipo'=>'media','media_tipo'=>'imagen'],
-                ['nombre'=>'categoria','etiqueta'=>'Categoría','tipo'=>'select','opciones'=>['mercado'=>'Mercado','macro'=>'Macro','inter'=>'Internacional','empresa'=>'Empresa','regulacion'=>'Regulación']],
+                ['nombre'=>'categoria','etiqueta'=>'Categoría','tipo'=>'select','opciones'=>['mercado'=>'Mercado de Capitales','macro'=>'Macroeconomía','inter'=>'Internacional','empresa'=>'Empresas','regulacion'=>'Regulación','negocios'=>'Negocios','inversiones'=>'Inversiones','summit'=>'Summit Forbes']],
                 ['nombre'=>'estado','etiqueta'=>'Estado','tipo'=>'select','opciones'=>['borrador'=>'Borrador','publicado'=>'Publicado']],
                 ['nombre'=>'visible_front','etiqueta'=>'Visible en el sitio público','tipo'=>'checkbox','hint'=>'Desmarcá para ocultar esta noticia del sitio sin pasarla a borrador.'],
                 ['nombre'=>'fecha_publicacion','etiqueta'=>'Fecha de publicación','tipo'=>'date'],

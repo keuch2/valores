@@ -1,5 +1,5 @@
 <?php /** Detalle de noticia. Recibe $n (fila de `noticias`). */
-$cat = ['mercado'=>'Mercado Local','macro'=>'Macroeconomía','inter'=>'Internacional','empresa'=>'Empresas','regulacion'=>'Regulación'];
+$cat = ['mercado'=>'Mercado de Capitales','macro'=>'Macroeconomía','inter'=>'Internacional','empresa'=>'Empresas','regulacion'=>'Regulación','negocios'=>'Negocios','inversiones'=>'Inversiones','summit'=>'Summit Forbes'];
 $img = img_url((int) ($n['imagen_destacada_id'] ?? 0));
 ?>
 <section class="hero-inner">

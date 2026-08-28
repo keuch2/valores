@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675">
+  <defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#0B3C5D"/><stop offset="1" stop-color="#2E6B96"/></linearGradient></defs>
+  <rect width="1200" height="675" fill="url(#g)"/>
+  <g fill="none" stroke="#ffffff" stroke-opacity="0.18" stroke-width="2">
+    <circle cx="960" cy="340" r="260"/><circle cx="960" cy="340" r="190"/><circle cx="960" cy="340" r="120"/>
+    <path d="M700 480 L790 400 L850 440 L930 340 L990 380 L1060 300 L1160 240" stroke-opacity="0.45" stroke-width="4"/>
+  </g>
+  <text x="80" y="330" font-family="Quicksand, Helvetica, Arial, sans-serif" font-size="72" font-weight="700" fill="#ffffff">VALORES</text>
+  <text x="84" y="372" font-family="Quicksand, Helvetica, Arial, sans-serif" font-size="22" letter-spacing="6" fill="#ffffff" fill-opacity="0.7">CASA DE BOLSA</text>
+  <text x="84" y="440" font-family="Quicksand, Helvetica, Arial, sans-serif" font-size="26" fill="#F5A300">Noticias y análisis del mercado</text>
+</svg>

@@ -1,5 +1,5 @@
 <?php /** Noticias: listado paginado. Recibe $noticias, $pagina, $paginas. */
-$cat = ['mercado'=>'Mercado Local','macro'=>'Macroeconomía','inter'=>'Internacional','empresa'=>'Empresas','regulacion'=>'Regulación'];
+$cat = ['mercado'=>'Mercado de Capitales','macro'=>'Macroeconomía','inter'=>'Internacional','empresa'=>'Empresas','regulacion'=>'Regulación','negocios'=>'Negocios','inversiones'=>'Inversiones','summit'=>'Summit Forbes'];
 ?>
 <section class="hero-inner">
   <div class="container relative z-10">
