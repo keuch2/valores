@@ -19,7 +19,39 @@
   </div>
 </section>
 
-<section class="section bg-gray" id="directiva">
+<section class="section bg-gray" id="identidad">
+  <div class="container">
+    <div class="text-center mb-10 animate-fade-up">
+      <div class="section-tag mx-auto justify-center">Identidad</div>
+      <h2 class="section-title mt-2">Misión, Visión y Valores</h2>
+    </div>
+    <div class="grid md:grid-cols-3 gap-6">
+      <div class="card p-8 animate-fade-up animate-delay-1 border-t-4 border-celeste">
+        <div class="text-2xl mb-3"><i class="fa-solid fa-bullseye text-blue-inst"></i></div>
+        <h3 class="font-bold text-blue-inst text-lg mb-3">Nuestra Misión</h3>
+        <p class="text-gray-txt leading-relaxed">En Valores Casa de Bolsa generamos valor a través de soluciones financieras responsables, participando activamente en el mercado de capitales con ética, profesionalismo y una adecuada gestión del riesgo.</p>
+      </div>
+      <div class="card p-8 animate-fade-up animate-delay-2 border-t-4 border-celeste">
+        <div class="text-2xl mb-3"><i class="fa-solid fa-eye text-blue-inst"></i></div>
+        <h3 class="font-bold text-blue-inst text-lg mb-3">Nuestra Visión</h3>
+        <p class="text-gray-txt leading-relaxed">Ser referentes del mercado bursátil paraguayo por nuestra trayectoria, solidez e innovación, acompañando el desarrollo económico del país y contribuyendo al bienestar de nuestros clientes e inversores.</p>
+      </div>
+      <div class="card p-8 animate-fade-up animate-delay-3 border-t-4 border-celeste">
+        <div class="text-2xl mb-3"><i class="fa-solid fa-gem text-blue-inst"></i></div>
+        <h3 class="font-bold text-blue-inst text-lg mb-3">Nuestros Valores</h3>
+        <ul class="space-y-2">
+          <li class="flex items-start gap-3 text-gray-txt"><i class="fa-solid fa-check text-celeste mt-1"></i><span>Integridad y ética en cada operación</span></li>
+          <li class="flex items-start gap-3 text-gray-txt"><i class="fa-solid fa-check text-celeste mt-1"></i><span>Profesionalismo y excelencia técnica</span></li>
+          <li class="flex items-start gap-3 text-gray-txt"><i class="fa-solid fa-check text-celeste mt-1"></i><span>Transparencia y confianza plena</span></li>
+          <li class="flex items-start gap-3 text-gray-txt"><i class="fa-solid fa-check text-celeste mt-1"></i><span>Respeto en cada relación</span></li>
+          <li class="flex items-start gap-3 text-gray-txt"><i class="fa-solid fa-check text-celeste mt-1"></i><span>Compromiso total con el cliente</span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="directiva">
   <div class="container">
     <div class="text-center mb-12">
       <div class="section-tag">Equipo</div>
