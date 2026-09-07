@@ -136,7 +136,7 @@ echo 'Servicios actualizados: ' . count($servicios) . "\n";
 $ejecutivos = [
     'Diego Christian Borja Terán'      => 'Presidente y accionista mayoritario de Valores Casa de Bolsa. Más de 30 años liderando operaciones bursátiles y estructuraciones fiduciarias en el mercado paraguayo.',
     'Gustavo Mathias Angulo Turitich'  => 'Vicepresidente ejecutivo con amplia trayectoria en el desarrollo de productos financieros, emisiones de deuda y expansión de la cartera institucional.',
-    'Yanina Monges Chávez'             => 'Directora titular con especialización en estructuración fiduciaria, cumplimiento regulatorio y gestión de riesgos. Referente del sector financiero femenino paraguayo.',
+    'Yanina Monges Chávez'             => 'Directora titular especializada en gestión operativa, optimización de procesos e implementación de sistemas internos de información y proyectos de tecnología. Lidera iniciativas estratégicas orientadas a la eficiencia, innovación y transformación operativa de la organización.',
 ];
 $ue = $pdo->prepare('UPDATE ejecutivos SET bio = :b WHERE nombre = :n');
 foreach ($ejecutivos as $nombre => $bio) {

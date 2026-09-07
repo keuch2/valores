@@ -5,13 +5,13 @@
       <div class="animate-fade-up">
         <div class="section-tag">Qué es</div>
         <h2 class="section-title mt-2">Accede al Mercado de Valores con los mejores</h2>
-        <p class="text-gray-txt leading-relaxed mt-4">La intermediación bursátil es el servicio a través del cual compras y vendes valores mobiliarios —acciones, bonos, CDAs, pagarés— en el mercado organizado de la Bolsa de Valores y Productos de Asunción (BVA).</p>
+        <p class="text-gray-txt leading-relaxed mt-4">La intermediación bursátil es el servicio a través del cual comprás y vendés títulos —acciones, bonos, CDAs— en el mercado organizado de la Bolsa de Valores y Productos de Asunción (BVA).</p>
         <p class="text-gray-txt leading-relaxed mt-3">Como agente habilitado por la Superintendencia de Valores (SIV) del Banco Central del Paraguay, Valores Casa de Bolsa actúa en nombre de sus clientes ejecutando órdenes con agilidad, transparencia y al mejor precio disponible en el mercado.</p>
         <p class="text-gray-txt leading-relaxed mt-3">Tanto si sos un inversor individual como una empresa o institución, nuestros corredores te acompañan con criterio, experiencia y una mirada estratégica sobre el mercado local.</p>
       </div>
       <div class="animate-fade-up animate-delay-2">
         <div class="grid grid-cols-2 gap-4">
-          <div class="card p-5 text-center"><div class="text-3xl mb-2"><i class="fa-solid fa-landmark text-blue-inst"></i></div><div class="font-bold text-blue-inst text-sm">Renta Fija</div><div class="text-xs text-gray-txt mt-1">Bonos, letras, pagarés</div></div>
+          <div class="card p-5 text-center"><div class="text-3xl mb-2"><i class="fa-solid fa-landmark text-blue-inst"></i></div><div class="font-bold text-blue-inst text-sm">Renta Fija</div><div class="text-xs text-gray-txt mt-1">Bonos corporativos, bonos municipales, bonos financieros</div></div>
           <div class="card p-5 text-center"><div class="text-3xl mb-2"><i class="fa-solid fa-chart-line text-blue-inst"></i></div><div class="font-bold text-blue-inst text-sm">Renta Variable</div><div class="text-xs text-gray-txt mt-1">Acciones de empresas</div></div>
           <div class="card p-5 text-center"><div class="text-3xl mb-2"><i class="fa-solid fa-money-check-dollar text-blue-inst"></i></div><div class="font-bold text-blue-inst text-sm">CDAs</div><div class="text-xs text-gray-txt mt-1">Mercado primario y secundario</div></div>
           <div class="card p-5 text-center"><div class="text-3xl mb-2"><i class="fa-solid fa-arrow-right-arrow-left text-blue-inst"></i></div><div class="font-bold text-blue-inst text-sm">Mercado Secundario</div><div class="text-xs text-gray-txt mt-1">Liquidez para tu inversión</div></div>

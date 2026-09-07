@@ -6,11 +6,11 @@
         <div class="section-tag">El servicio</div>
         <h2 class="section-title mt-2">Financiamiento a la medida de tu empresa, a través del mercado de capitales</h2>
         <p class="text-gray-txt leading-relaxed mt-4">En Valores Casa de Bolsa acompañamos a empresas, municipios e instituciones a acceder a fuentes de financiamiento alternativas al crédito bancario tradicional, diseñando estructuras a medida a través del mercado de valores.</p>
-        <p class="text-gray-txt leading-relaxed mt-3">Con más de 33 años de trayectoria y más de 100 estructuras fiduciarias exitosas, somos el aliado ideal para transformar tus necesidades de capital en una estrategia sólida y eficiente.</p>
+        <p class="text-gray-txt leading-relaxed mt-3">Con más de 33 años de trayectoria, somos el aliado ideal para transformar tus necesidades de capital en una estrategia sólida y eficiente.</p>
       </div>
       <div class="animate-fade-up animate-delay-2 grid grid-cols-2 gap-4">
         <div class="bg-blue-inst rounded-2xl p-6 text-white text-center"><div class="text-3xl font-bold text-naranja">33+</div><div class="text-sm mt-1 text-white/80">Años de trayectoria</div></div>
-        <div class="card p-6 text-center"><div class="text-3xl font-bold text-blue-inst">100+</div><div class="text-sm mt-1 text-gray-txt">Estructuras exitosas</div></div>
+        <div class="card p-6 text-center"><div class="text-3xl font-bold text-blue-inst">+1000</div><div class="text-sm mt-1 text-gray-txt">Inversores y empresas que confían en nosotros</div></div>
         <div class="card p-6 text-center"><div class="text-3xl font-bold text-blue-inst">SIV</div><div class="text-sm mt-1 text-gray-txt">Equipo regulado</div></div>
         <div class="bg-celeste-soft rounded-2xl p-6 text-center border border-celeste/20"><div class="text-3xl font-bold text-blue-fin">PY</div><div class="text-sm mt-1 text-blue-fin">Mercado paraguayo</div></div>
       </div>
