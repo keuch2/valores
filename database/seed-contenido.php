@@ -134,7 +134,7 @@ echo 'Servicios actualizados: ' . count($servicios) . "\n";
 //  EJECUTIVOS — bio real
 // ---------------------------------------------------------------------------
 $ejecutivos = [
-    'Diego Christian Borja Terán'      => 'Fundador y presidente de Valores Casa de Bolsa. Más de 30 años liderando operaciones bursátiles y estructuraciones fiduciarias en el mercado paraguayo.',
+    'Diego Christian Borja Terán'      => 'Presidente y accionista mayoritario de Valores Casa de Bolsa. Más de 30 años liderando operaciones bursátiles y estructuraciones fiduciarias en el mercado paraguayo.',
     'Gustavo Mathias Angulo Turitich'  => 'Vicepresidente ejecutivo con amplia trayectoria en el desarrollo de productos financieros, emisiones de deuda y expansión de la cartera institucional.',
     'Yanina Monges Chávez'             => 'Directora titular con especialización en estructuración fiduciaria, cumplimiento regulatorio y gestión de riesgos. Referente del sector financiero femenino paraguayo.',
 ];
