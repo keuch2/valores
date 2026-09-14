@@ -4,8 +4,7 @@
     <div class="grid lg:grid-cols-2 gap-16 items-start">
       <div class="animate-fade-up">
         <div class="section-tag">El servicio</div>
-        <h2 class="section-title mt-2">Administración de Carteras</h2>
-        <p class="text-gray-txt leading-relaxed mt-4">La Administración de Carteras permite delegar la gestión y seguimiento de un portafolio de inversiones en un equipo especializado, de acuerdo con los objetivos, perfil y estrategia definidos para cada cliente.</p>
+        <p class="text-gray-txt leading-relaxed mt-2">La Administración de Carteras permite delegar la gestión y seguimiento de un portafolio de inversiones en un equipo especializado, de acuerdo con los objetivos, perfil y estrategia definidos para cada cliente.</p>
         <p class="text-gray-txt leading-relaxed mt-3">Valores Casa de Bolsa acompaña la administración de las inversiones mediante el análisis y selección de instrumentos, diversificación del portafolio y seguimiento de su evolución.</p>
         <p class="text-gray-txt leading-relaxed mt-3">La estrategia se estructura considerando las características y objetivos de cada cliente, procurando una adecuada relación entre riesgo, liquidez, horizonte de inversión y rendimiento esperado.</p>
       </div>
