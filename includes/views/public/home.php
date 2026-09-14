@@ -46,7 +46,7 @@
 <!-- Franja de estadísticas -->
 <section class="stats-strip">
   <div class="container">
-    <div class="grid grid-cols-2 md:grid-cols-4 gap-0 divide-x divide-white/10">
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-0 divide-x divide-white/10">
       <div class="stat-item">
         <span class="number" data-count="33" data-prefix="+" data-suffix=" años">+33 años</span>
         <span class="label">acompañando el desarrollo del mercado de valores paraguayo</span>
@@ -58,10 +58,6 @@
       <div class="stat-item">
         <span class="number" data-count="100" data-prefix="+" data-suffix="">+100</span>
         <span class="label">emisiones estructuradas exitosas</span>
-      </div>
-      <div class="stat-item">
-        <span class="number">#1</span>
-        <span class="label">Primeros estructuradores fiduciarios del país</span>
       </div>
     </div>
   </div>

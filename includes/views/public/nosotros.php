@@ -15,7 +15,6 @@
     <p class="text-gray-txt leading-relaxed mt-3">Somos agentes organizadores y estructuradores de emisiones de acciones y títulos de deuda para entidades privadas y municipales a nivel nacional, acompañando cada proyecto con seriedad, conocimiento y una mirada estratégica.</p>
     <p class="text-gray-txt leading-relaxed mt-3">Fuimos pioneros en el desarrollo de estructuras fiduciarias en Paraguay e impulsores de la figura de la titularización, marcando hitos que ayudaron a fortalecer y modernizar el mercado de valores del país.</p>
     <p class="text-gray-txt leading-relaxed mt-3">Con más de 33 años de trayectoria, diseñamos opciones de inversión a medida, entendiendo que detrás de cada inversor y cada emisor hay objetivos, desafíos y proyectos únicos.</p>
-    <p class="text-gray-txt leading-relaxed mt-3">Hoy seguimos evolucionando, con una mirada puesta también en el mercado inmobiliario, con el firme propósito de facilitar soluciones financieras sólidas, transparentes y confiables.</p>
   </div>
 </section>
 

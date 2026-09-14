@@ -65,7 +65,7 @@ INSERT INTO servicios (titulo, slug, icono, descripcion_corta, orden, activo) VA
   ('Análisis Económico y Financiero', 'analisis-financiero', 'fa-chart-line', 'Análisis de empresas, sectores y mercados para apoyar la toma de decisiones de inversión y financiamiento.', 3, 1),
   ('Estructuración de Financiamiento', 'estructuracion-de-financiamiento', 'fa-coins', 'Diseño y estructuración de alternativas de financiamiento a través del mercado de valores, incluyendo emisiones de bonos, acciones y otros instrumentos.', 4, 1),
   ('Estructuración Fiduciaria', 'estructuracion-fiduciaria', 'fa-shield-halved', 'Diseño de estructuras fiduciarias orientadas a proyectos de inversión, financiamiento, administración de activos y generación de vehículos especializados.', 5, 1),
-  ('Asociación Público-Privada (APP)', 'app', 'fa-handshake', 'Asesoramiento financiero y estructuración de proyectos bajo esquemas de participación público-privada, desde el análisis de viabilidad hasta la estructuración financiera.', 6, 1),
+  ('Administración de Carteras', 'administracion-de-carteras', 'fa-chart-pie', 'Gestión profesional de inversiones: análisis y selección de instrumentos, diversificación del portafolio y seguimiento de su evolución según el perfil y los objetivos de cada cliente.', 6, 1),
   ('Asesoramiento Financiero Corporativo', 'asesoramiento-financiero-corporativo', 'fa-briefcase', 'Acompañamiento a empresas en decisiones estratégicas de financiamiento, inversión, reorganización financiera y acceso al mercado de capitales.', 7, 1),
   ('Reportes de Mercado', 'reportes', 'fa-file-lines', 'Elaboración de reportes financieros, análisis de mercado, seguimiento de emisiones, tasas, instrumentos y principales indicadores para facilitar la toma de decisiones.', 8, 1);
 
