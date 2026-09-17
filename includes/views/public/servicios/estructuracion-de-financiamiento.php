@@ -24,10 +24,9 @@
       <div class="section-tag mx-auto justify-center">Alternativas</div>
       <h2 class="section-title mt-2">Diseñamos y estructuramos alternativas de financiamiento que incluyen</h2>
     </div>
-    <div class="grid md:grid-cols-3 gap-6">
+    <div class="grid md:grid-cols-2 gap-6">
       <div class="card p-6 animate-fade-up animate-delay-1 border-t-4 border-celeste"><div class="text-2xl mb-3"><i class="fa-solid fa-file-invoice-dollar text-blue-inst"></i></div><h4 class="font-bold text-blue-inst mb-2">Emisión de bonos corporativos</h4><p class="text-sm text-gray-txt">Acceso a capital de largo plazo con condiciones competitivas y adaptadas al flujo de tu negocio.</p></div>
       <div class="card p-6 animate-fade-up animate-delay-2 border-t-4 border-celeste"><div class="text-2xl mb-3"><i class="fa-solid fa-chart-pie text-blue-inst"></i></div><h4 class="font-bold text-blue-inst mb-2">Emisión de acciones</h4><p class="text-sm text-gray-txt">Apertura de capital para fortalecer tu estructura financiera y sumar nuevos inversores.</p></div>
-      <div class="card p-6 animate-fade-up animate-delay-3 border-t-4 border-celeste"><div class="text-2xl mb-3"><i class="fa-solid fa-shield-halved text-blue-inst"></i></div><h4 class="font-bold text-blue-inst mb-2">Fideicomisos financieros y otros instrumentos</h4><p class="text-sm text-gray-txt">Soluciones flexibles según el perfil, el sector y los objetivos de cada organización.</p></div>
     </div>
   </div>
 </section>

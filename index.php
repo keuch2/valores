@@ -113,6 +113,14 @@ switch ($pagina) {
         if ($sub === 'enviar') { trabaja_enviar(); } else { trabaja_form(); }
         break;
 
+    case 'politica-de-privacidad':
+        vista_publica('privacidad', [], [
+            'title' => 'Política de Privacidad — Valores',
+            'desc'  => 'Cómo Valores Casa de Bolsa S.A. recopila, utiliza, almacena y protege los datos personales.',
+            'activo'=> '',
+        ]);
+        break;
+
     case 'glosario':
         vista_publica('glosario', ['terminos' => Publico::glosario()], ['title' => 'Glosario financiero — Valores', 'activo' => 'invierte']);
         break;

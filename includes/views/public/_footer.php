@@ -67,9 +67,8 @@ $waNum = preg_replace('/[^0-9]/', '', $sitio['contacto_whatsapp']);
     <div class="container flex flex-col md:flex-row justify-between items-center gap-3">
       <p>© <?= date('Y') ?> Valores Casa de Bolsa S.A. Regulado por la Superintendencia de Valores (SIV) del Banco Central del Paraguay.</p>
       <div class="flex gap-4">
-        <a href="#">Política de Privacidad</a>
-        <a href="#">Términos y Condiciones</a>
-        <a href="#">Normativa SIV</a>
+        <a href="<?= e(url('politica-de-privacidad')) ?>">Política de Privacidad</a>
+        <a href="https://www.bcp.gov.py/web/institucional/marco-normativo-siv" target="_blank" rel="noopener">Normativa SIV</a>
       </div>
     </div>
   </div>
