@@ -47,6 +47,8 @@ INSERT INTO configuracion (clave, valor, grupo) VALUES
   ('smtp_pass', '', 'smtp'),
   ('smtp_remitente', 'no-reply@valores.com.py', 'smtp'),
   ('smtp_encriptacion', 'tls', 'smtp'),
+  ('smtp_nombre', 'Valores Casa de Bolsa', 'smtp'),
+  ('contacto_form_email', '', 'formularios'),
   -- Parámetros del módulo de apertura
   ('apertura_firma_max_bytes', '5242880', 'apertura'),
   ('apertura_firma_formatos',  'jpg,jpeg,png', 'apertura'),
@@ -54,7 +56,9 @@ INSERT INTO configuracion (clave, valor, grupo) VALUES
   ('apertura_email_cliente_asunto', 'Recibimos tu solicitud — Valores Casa de Bolsa', 'apertura'),
   ('apertura_whatsapp', '+595 994 100 003', 'apertura'),
   ('oportunidades_pdf_id', '', 'oportunidades'),
-  ('trabaja_email', 'administracion@valores.com.py', 'contacto');
+  ('trabaja_email', 'administracion@valores.com.py', 'contacto'),
+  ('tracking_head', '', 'tracking'),
+  ('favicon_media_id', '', 'sitio');
 
 -- ----------------------------------------------------------------------------
 --  Servicios (8 según revisión editorial del cliente, ago-2026)

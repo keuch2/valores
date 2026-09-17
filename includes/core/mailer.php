@@ -11,7 +11,7 @@
 
 declare(strict_types=1);
 
-function mailer_enviar(string $para, string $asunto, string $cuerpo): bool
+function mailer_enviar(string $para, string $asunto, string $cuerpo, string $responderA = ''): bool
 {
     $remitente = Config::get('smtp_remitente', 'no-reply@valores.com.py');
     $host = Config::get('smtp_host', '');
@@ -38,8 +38,12 @@ function mailer_enviar(string $para, string $asunto, string $cuerpo): bool
             $enc = Config::get('smtp_encriptacion', 'tls');
             if ($enc) { $mail->SMTPSecure = $enc; }
             $mail->CharSet = 'UTF-8';
-            $mail->setFrom($remitente, 'Valores Casa de Bolsa');
+            $mail->setFrom($remitente, (string) Config::get('smtp_nombre', 'Valores Casa de Bolsa'));
             $mail->addAddress($para);
+            // Responder va al visitante, no a la casilla de sistema.
+            if ($responderA !== '' && email_valido($responderA) !== null) {
+                $mail->addReplyTo($responderA);
+            }
             $mail->Subject = $asunto;
             $mail->Body = $cuerpo;
             $mail->send();
@@ -48,6 +52,7 @@ function mailer_enviar(string $para, string $asunto, string $cuerpo): bool
 
         // Fallback: mail() nativo (suficiente en entornos con MTA local).
         $headers = 'From: ' . $remitente . "\r\n"
+            . ($responderA !== '' && email_valido($responderA) !== null ? 'Reply-To: ' . $responderA . "\r\n" : '')
             . "Content-Type: text/plain; charset=UTF-8\r\n";
         $ok = @mail($para, $asunto, $cuerpo, $headers);
         if (!$ok) {

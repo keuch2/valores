@@ -369,36 +369,23 @@ document.addEventListener('DOMContentLoaded', function () {
 
   // ============================================================
   // 10. CONTACT FORM
+  // El envío es un POST normal al servidor (contacto/enviar). Acá solo se
+  // exige el consentimiento y se evita el doble envío.
   // ============================================================
   const contactForm = document.getElementById('contact-form');
   if (contactForm) {
     contactForm.addEventListener('submit', function (e) {
-      e.preventDefault();
-      let valid = true;
-
-      contactForm.querySelectorAll('[required]').forEach(function (field) {
-        field.style.borderColor = '';
-        if (!field.value.trim()) {
-          field.style.borderColor = '#f87171';
-          valid = false;
-        }
-      });
-
       const checkbox = document.getElementById('acepto-contacto');
       if (checkbox && !checkbox.checked) {
-        valid = false;
+        e.preventDefault();
         checkbox.style.outline = '2px solid #f87171';
-      } else if (checkbox) {
-        checkbox.style.outline = '';
+        checkbox.focus();
+        return;
       }
-
-      if (!valid) return;
+      if (checkbox) { checkbox.style.outline = ''; }
 
       const btn = document.getElementById('contact-submit');
-      const successMsg = document.getElementById('contact-success');
-
-      if (btn) { btn.textContent = 'Mensaje enviado ✓'; btn.disabled = true; btn.classList.add('opacity-75'); }
-      if (successMsg) { successMsg.classList.remove('hidden'); successMsg.scrollIntoView({ behavior: 'smooth', block: 'nearest' }); }
+      if (btn) { btn.disabled = true; btn.textContent = 'Enviando…'; }
     });
   }
 

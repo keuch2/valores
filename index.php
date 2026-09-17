@@ -97,7 +97,8 @@ switch ($pagina) {
         break;
 
     case 'contacto':
-        vista_publica('contacto', ['faqs' => Publico::faqs('contacto')], ['title' => 'Contacto — Valores', 'activo' => 'contacto']);
+        require APP_ROOT . '/includes/controllers/public/contacto.php';
+        if ($sub === 'enviar') { contacto_enviar(); } else { contacto_form(); }
         break;
 
     case 'investor-pass':

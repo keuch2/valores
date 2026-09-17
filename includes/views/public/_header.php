@@ -12,6 +12,13 @@ $na = fn(string $k) => $act === $k ? ' active' : '';
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title><?= e($meta['title']) ?></title>
   <meta name="description" content="<?= e($meta['desc'] ?? '') ?>"/>
+<?php
+// Favicon administrable desde el panel (Configuración → Sitio).
+$favicon = img_url((int) Config::get('favicon_media_id', '0'));
+if ($favicon !== ''): ?>
+  <link rel="icon" href="<?= e($favicon) ?>"/>
+  <link rel="apple-touch-icon" href="<?= e($favicon) ?>"/>
+<?php endif; ?>
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="<?= e(url('assets/css/styles.css')) ?>?v=20260828c"/>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" referrerpolicy="no-referrer"/>
@@ -27,6 +34,18 @@ $na = fn(string $k) => $act === $k ? ' active' : '';
       } }
     }
   </script>
+<?php
+/**
+ * Códigos de tracking (Google, Meta, etc.) cargados desde el panel.
+ * Se emiten SIN escapar a propósito: son etiquetas HTML/JS que el admin
+ * pega tal cual. Único origen: usuarios administradores autenticados.
+ */
+$trackingHead = trim((string) Config::get('tracking_head', ''));
+if ($trackingHead !== ''): ?>
+  <!-- Códigos de tracking (panel → Configuración) -->
+  <?= $trackingHead ?>
+
+<?php endif; ?>
 </head>
 <body class="font-quicksand">
 

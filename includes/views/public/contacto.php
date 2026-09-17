@@ -1,4 +1,9 @@
-<?php /** Contacto. Recibe $faqs. */ $sitio = $GLOBALS['_sitio']; $wa = preg_replace('/[^0-9]/', '', $sitio['contacto_whatsapp']); ?>
+<?php /** Contacto. Recibe $faqs, $error, $viejos, $enviado. */
+$sitio = $GLOBALS['_sitio'];
+$wa = preg_replace('/[^0-9]/', '', $sitio['contacto_whatsapp']);
+$viejos = $viejos ?? []; $error = $error ?? null; $enviado = $enviado ?? false;
+$v = fn(string $k) => e((string) ($viejos[$k] ?? ''));
+?>
 <section class="hero-inner has-photo" style="background-image:url('<?= e(url('assets/img/hero-contacto.webp')) ?>')">
   <div class="container relative z-10">
     <div class="breadcrumb"><a href="<?= e(url('')) ?>">Inicio</a> <span>/</span> <span class="text-white/80">Contacto</span></div>
@@ -14,27 +19,34 @@
       <div class="section-tag">Escribinos</div>
       <h2 class="section-title mt-2">Envianos un mensaje</h2>
       <p class="text-gray-txt mt-3">Respondemos en menos de 24 horas hábiles. También podés comunicarte directamente por teléfono o WhatsApp.</p>
-      <form id="contact-form" class="mt-8 space-y-5" method="post" action="<?= e(url('contacto/enviar')) ?>" novalidate>
+      <?php if ($enviado): ?>
+        <div class="card p-8 mt-8 text-center">
+          <div class="text-4xl mb-3">✅</div>
+          <div class="font-bold text-blue-inst text-lg mb-1">¡Mensaje enviado!</div>
+          <p class="text-sm text-gray-txt">Un asesor de Valores se comunicará con vos pronto.</p>
+        </div>
+      <?php else: ?>
+      <form id="contact-form" class="mt-8 space-y-5" method="post" action="<?= e(url('contacto/enviar')) ?>">
         <?= csrf_campo() ?>
         <!-- honeypot anti-spam -->
         <input type="text" name="website" value="" style="display:none" tabindex="-1" autocomplete="off">
+        <?php if ($error): ?>
+          <div class="p-4 bg-red-50 border border-red-200 rounded-xl text-sm text-red-700"><?= e($error) ?></div>
+        <?php endif; ?>
         <div class="grid md:grid-cols-2 gap-5">
-          <div class="form-group"><label class="form-label">Nombre *</label><input type="text" name="nombre" class="form-input" required/></div>
-          <div class="form-group"><label class="form-label">Apellido *</label><input type="text" name="apellido" class="form-input" required/></div>
+          <div class="form-group"><label class="form-label">Nombre *</label><input type="text" name="nombre" class="form-input" required maxlength="100" value="<?= $v('nombre') ?>"/></div>
+          <div class="form-group"><label class="form-label">Apellido *</label><input type="text" name="apellido" class="form-input" required maxlength="100" value="<?= $v('apellido') ?>"/></div>
         </div>
-        <div class="form-group"><label class="form-label">Correo electrónico *</label><input type="email" name="email" class="form-input" required/></div>
-        <div class="form-group"><label class="form-label">Teléfono / WhatsApp</label><input type="tel" name="telefono" class="form-input"/></div>
-        <div class="form-group"><label class="form-label">Mensaje *</label><textarea name="mensaje" class="form-input" rows="5" required></textarea></div>
+        <div class="form-group"><label class="form-label">Correo electrónico *</label><input type="email" name="email" class="form-input" required maxlength="190" value="<?= $v('email') ?>"/></div>
+        <div class="form-group"><label class="form-label">Teléfono / WhatsApp</label><input type="tel" name="telefono" class="form-input" maxlength="50" value="<?= $v('telefono') ?>"/></div>
+        <div class="form-group"><label class="form-label">Mensaje *</label><textarea name="mensaje" class="form-input" rows="5" required maxlength="3000"><?= $v('mensaje') ?></textarea></div>
         <div class="flex items-start gap-3">
           <input type="checkbox" id="acepto-contacto" class="mt-1 w-4 h-4 text-celeste rounded"/>
           <label for="acepto-contacto" class="text-sm text-gray-txt">Acepto la Política de Privacidad.</label>
         </div>
         <button type="submit" id="contact-submit" class="btn btn-primary w-full">Enviar mensaje →</button>
-        <div id="contact-success" class="hidden text-center p-5 bg-green-50 rounded-xl border border-green-200">
-          <div class="font-bold text-green-800 mb-1">¡Mensaje enviado!</div>
-          <div class="text-sm text-green-700">Un asesor de Valores se comunicará con vos pronto.</div>
-        </div>
       </form>
+      <?php endif; ?>
     </div>
 
     <!-- Datos de contacto (dinámicos) -->
