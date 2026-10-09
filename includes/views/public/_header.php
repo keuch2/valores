@@ -93,6 +93,7 @@ if ($trackingHead !== ''): ?>
           <a href="<?= e(url('nosotros')) ?>" class="dropdown-item"><div><strong>Quiénes Somos</strong><small>Historia y trayectoria</small></div></a>
           <a href="<?= e(url('nosotros#identidad')) ?>" class="dropdown-item"><div><strong>Misión, Visión y Valores</strong><small>Nuestra identidad</small></div></a>
           <a href="<?= e(url('nosotros#directiva')) ?>" class="dropdown-item"><div><strong>Plana Directiva</strong><small>Nuestro equipo</small></div></a>
+          <a href="https://www.bolsadevalores.com.py/casas-de-bolsa/valores-cbsa/" target="_blank" rel="noopener noreferrer" class="dropdown-item"><div><strong>Información Financiera</strong><small>Estados en la Bolsa de Valores</small></div></a>
         </div>
       </div>
 
@@ -138,7 +139,15 @@ if ($trackingHead !== ''): ?>
         <a href="<?= e(url('oportunidades')) ?>">Oportunidades</a>
       </div>
     </div>
-    <a href="<?= e(url('nosotros')) ?>" class="mobile-nav-link">Nosotros</a>
+    <div>
+      <button class="mobile-dropdown-toggle">Nosotros <svg class="w-4 h-4 m-chevron" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg></button>
+      <div class="mobile-dropdown-content">
+        <a href="<?= e(url('nosotros')) ?>">Quiénes Somos</a>
+        <a href="<?= e(url('nosotros#identidad')) ?>">Misión, Visión y Valores</a>
+        <a href="<?= e(url('nosotros#directiva')) ?>">Plana Directiva</a>
+        <a href="https://www.bolsadevalores.com.py/casas-de-bolsa/valores-cbsa/" target="_blank" rel="noopener noreferrer">Información Financiera</a>
+      </div>
+    </div>
     <a href="<?= e(url('trabaja-con-nosotros')) ?>" class="mobile-nav-link">Trabajá con Nosotros</a>
     <a href="<?= e(url('noticias')) ?>" class="mobile-nav-link">Noticias</a>
     <a href="<?= e(url('contacto')) ?>" class="mobile-nav-link">Contacto</a>
