@@ -1212,6 +1212,15 @@ ul { list-style: none; }
 
 .footer-bottom a:hover { color: var(--color-celeste); }
 
+/* Crédito de desarrollo: discreto, debajo del copyright */
+.footer-bottom .footer-credito {
+  margin-top: 0.75rem;
+  text-align: center;
+  font-size: 0.7rem;
+  color: rgba(255,255,255,0.3);
+}
+.footer-bottom .footer-credito a { color: rgba(255,255,255,0.4); }
+
 /* Social icons */
 .social-links {
   display: flex;

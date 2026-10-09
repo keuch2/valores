@@ -71,6 +71,9 @@ $waNum = preg_replace('/[^0-9]/', '', $sitio['contacto_whatsapp']);
         <a href="https://www.bcp.gov.py/web/institucional/marco-normativo-siv" target="_blank" rel="noopener">Normativa SIV</a>
       </div>
     </div>
+    <div class="container">
+      <p class="footer-credito">Desarrollado por <a href="https://www.mister.com.py" target="_blank" rel="noopener">Mister Co.</a></p>
+    </div>
   </div>
 </footer>
 
